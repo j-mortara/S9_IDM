@@ -1,0 +1,15 @@
+SmartHome{
+	sensorTypes{
+		TEMPERATURE, HUMIDITY
+	}
+	Location bedroom {
+		Sensor temp1 TEMPERATURE ("")
+	},
+	Location kitchen {
+		Sensor hum1 HUMIDITY ("")
+	}
+	rules{
+		if "bedroom.temp1" < 20 for 20 min then "too cold"
+	}
+	
+}
