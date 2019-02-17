@@ -1,0 +1,5 @@
+	// BeginInjectInto fr.unice.polytech.idm.smartHome.aspects.ConditionAspect#boolean evaluate() from fr.unice.polytech.idm.smartHome.aspects.BooleanConditionAspect
+		if (_self instanceof smartHome.BooleanCondition){
+			result = fr.unice.polytech.idm.smartHome.aspects.BooleanConditionAspect.evaluate((smartHome.BooleanCondition)_self);
+		} else
+		// EndInjectInto fr.unice.polytech.idm.smartHome.aspects.ConditionAspect#boolean evaluate() from fr.unice.polytech.idm.smartHome.aspects.BooleanConditionAspect

@@ -16,11 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link smartHome.Sensor#getSensorType <em>Sensor Type</em>}</li>
  *   <li>{@link smartHome.Sensor#getDataFile <em>Data File</em>}</li>
  *   <li>{@link smartHome.Sensor#getName <em>Name</em>}</li>
- *   <li>{@link smartHome.Sensor#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see smartHome.SmartHomePackage#getSensor()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Sensor extends EObject {
@@ -101,31 +100,5 @@ public interface Sensor extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(int)
-	 * @see smartHome.SmartHomePackage#getSensor_Value()
-	 * @model
-	 * @generated
-	 */
-	int getValue();
-
-	/**
-	 * Sets the value of the '{@link smartHome.Sensor#getValue <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
-	 * @see #getValue()
-	 * @generated
-	 */
-	void setValue(int value);
 
 } // Sensor

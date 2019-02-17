@@ -10,6 +10,10 @@
 <favorites>
 <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/fr.unice.polytech.idm.xtext/.launch/Generate SmartHomeDSL (shdsl) Language Infrastructure.launch&quot;/&gt;&#10;"/>
 <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/fr.unice.polytech.idm.xtext/.launch/Launch Runtime Eclipse.launch&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/SmartHome.editor/fr.unice.polytech.idm.xtext/.launch/Generate SmartHomeDSL (shdsl) Language Infrastructure.launch&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/SmartHome.editor/fr.unice.polytech.idm.xtext/.launch/Launch Runtime Eclipse.launch&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/SmartHome.editor/org.xtext.example.smarthousedsl/.launch/Generate SmartHouseDsl (shdsl) Language Infrastructure.launch&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/SmartHome.editor/org.xtext.example.smarthousedsl/.launch/Launch Runtime Eclipse.launch&quot;/&gt;&#10;"/>
 </favorites>
 </launchGroup>
 <launchGroup id="org.eclipse.debug.ui.launchGroup.profile">
@@ -30,6 +34,10 @@
 <favorites>
 <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/fr.unice.polytech.idm.xtext/.launch/Generate SmartHomeDSL (shdsl) Language Infrastructure.launch&quot;/&gt;&#10;"/>
 <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/fr.unice.polytech.idm.xtext/.launch/Launch Runtime Eclipse.launch&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/SmartHome.editor/fr.unice.polytech.idm.xtext/.launch/Generate SmartHomeDSL (shdsl) Language Infrastructure.launch&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/SmartHome.editor/fr.unice.polytech.idm.xtext/.launch/Launch Runtime Eclipse.launch&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/SmartHome.editor/org.xtext.example.smarthousedsl/.launch/Generate SmartHouseDsl (shdsl) Language Infrastructure.launch&quot;/&gt;&#10;"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/SmartHome.editor/org.xtext.example.smarthousedsl/.launch/Launch Runtime Eclipse.launch&quot;/&gt;&#10;"/>
 </favorites>
 </launchGroup>
 </launchHistory>

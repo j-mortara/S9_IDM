@@ -10,12 +10,19 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import smartHome.AnalogSensorType;
+import smartHome.BooleanCondition;
+import smartHome.BooleanOperator;
+import smartHome.BooleanSensor;
+import smartHome.BooleanSensorType;
 import smartHome.Condition;
 import smartHome.Duration;
 import smartHome.DurationUnit;
 import smartHome.Event;
+import smartHome.IntegerCondition;
+import smartHome.IntegerOperator;
+import smartHome.IntegerSensor;
 import smartHome.Location;
-import smartHome.Operator;
 import smartHome.Rule;
 import smartHome.Sensor;
 import smartHome.SensorType;
@@ -43,6 +50,20 @@ public class SmartHomePackageImpl extends EPackageImpl implements SmartHomePacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass integerSensorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass booleanSensorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass locationEClass = null;
 
 	/**
@@ -51,6 +72,20 @@ public class SmartHomePackageImpl extends EPackageImpl implements SmartHomePacka
 	 * @generated
 	 */
 	private EClass sensorTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass analogSensorTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass booleanSensorTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,6 +113,20 @@ public class SmartHomePackageImpl extends EPackageImpl implements SmartHomePacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass booleanConditionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass integerConditionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass durationEClass = null;
 
 	/**
@@ -99,7 +148,14 @@ public class SmartHomePackageImpl extends EPackageImpl implements SmartHomePacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum operatorEEnum = null;
+	private EEnum integerOperatorEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum booleanOperatorEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,8 +269,35 @@ public class SmartHomePackageImpl extends EPackageImpl implements SmartHomePacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSensor_Value() {
-		return (EAttribute) sensorEClass.getEStructuralFeatures().get(3);
+	public EClass getIntegerSensor() {
+		return integerSensorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIntegerSensor_Value() {
+		return (EAttribute) integerSensorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBooleanSensor() {
+		return booleanSensorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBooleanSensor_Value() {
+		return (EAttribute) booleanSensorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -260,6 +343,24 @@ public class SmartHomePackageImpl extends EPackageImpl implements SmartHomePacka
 	 */
 	public EAttribute getSensorType_Name() {
 		return (EAttribute) sensorTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAnalogSensorType() {
+		return analogSensorTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBooleanSensorType() {
+		return booleanSensorTypeEClass;
 	}
 
 	/**
@@ -348,8 +449,8 @@ public class SmartHomePackageImpl extends EPackageImpl implements SmartHomePacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCondition_Sensor() {
-		return (EReference) conditionEClass.getEStructuralFeatures().get(0);
+	public EClass getBooleanCondition() {
+		return booleanConditionEClass;
 	}
 
 	/**
@@ -357,8 +458,8 @@ public class SmartHomePackageImpl extends EPackageImpl implements SmartHomePacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCondition_Operand() {
-		return (EAttribute) conditionEClass.getEStructuralFeatures().get(1);
+	public EReference getBooleanCondition_Sensor() {
+		return (EReference) booleanConditionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -366,8 +467,53 @@ public class SmartHomePackageImpl extends EPackageImpl implements SmartHomePacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCondition_Operator() {
-		return (EAttribute) conditionEClass.getEStructuralFeatures().get(2);
+	public EAttribute getBooleanCondition_Operand() {
+		return (EAttribute) booleanConditionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBooleanCondition_Operator() {
+		return (EAttribute) booleanConditionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIntegerCondition() {
+		return integerConditionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIntegerCondition_Sensor() {
+		return (EReference) integerConditionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIntegerCondition_Operand() {
+		return (EAttribute) integerConditionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIntegerCondition_Operator() {
+		return (EAttribute) integerConditionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -429,8 +575,17 @@ public class SmartHomePackageImpl extends EPackageImpl implements SmartHomePacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getOperator() {
-		return operatorEEnum;
+	public EEnum getIntegerOperator() {
+		return integerOperatorEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getBooleanOperator() {
+		return booleanOperatorEEnum;
 	}
 
 	/**
@@ -475,7 +630,12 @@ public class SmartHomePackageImpl extends EPackageImpl implements SmartHomePacka
 		createEReference(sensorEClass, SENSOR__SENSOR_TYPE);
 		createEAttribute(sensorEClass, SENSOR__DATA_FILE);
 		createEAttribute(sensorEClass, SENSOR__NAME);
-		createEAttribute(sensorEClass, SENSOR__VALUE);
+
+		integerSensorEClass = createEClass(INTEGER_SENSOR);
+		createEAttribute(integerSensorEClass, INTEGER_SENSOR__VALUE);
+
+		booleanSensorEClass = createEClass(BOOLEAN_SENSOR);
+		createEAttribute(booleanSensorEClass, BOOLEAN_SENSOR__VALUE);
 
 		locationEClass = createEClass(LOCATION);
 		createEAttribute(locationEClass, LOCATION__NAME);
@@ -483,6 +643,10 @@ public class SmartHomePackageImpl extends EPackageImpl implements SmartHomePacka
 
 		sensorTypeEClass = createEClass(SENSOR_TYPE);
 		createEAttribute(sensorTypeEClass, SENSOR_TYPE__NAME);
+
+		analogSensorTypeEClass = createEClass(ANALOG_SENSOR_TYPE);
+
+		booleanSensorTypeEClass = createEClass(BOOLEAN_SENSOR_TYPE);
 
 		smartHomeEClass = createEClass(SMART_HOME);
 		createEReference(smartHomeEClass, SMART_HOME__LOCATIONS);
@@ -495,9 +659,16 @@ public class SmartHomePackageImpl extends EPackageImpl implements SmartHomePacka
 		createEReference(ruleEClass, RULE__DURATION);
 
 		conditionEClass = createEClass(CONDITION);
-		createEReference(conditionEClass, CONDITION__SENSOR);
-		createEAttribute(conditionEClass, CONDITION__OPERAND);
-		createEAttribute(conditionEClass, CONDITION__OPERATOR);
+
+		booleanConditionEClass = createEClass(BOOLEAN_CONDITION);
+		createEReference(booleanConditionEClass, BOOLEAN_CONDITION__SENSOR);
+		createEAttribute(booleanConditionEClass, BOOLEAN_CONDITION__OPERAND);
+		createEAttribute(booleanConditionEClass, BOOLEAN_CONDITION__OPERATOR);
+
+		integerConditionEClass = createEClass(INTEGER_CONDITION);
+		createEReference(integerConditionEClass, INTEGER_CONDITION__SENSOR);
+		createEAttribute(integerConditionEClass, INTEGER_CONDITION__OPERAND);
+		createEAttribute(integerConditionEClass, INTEGER_CONDITION__OPERATOR);
 
 		durationEClass = createEClass(DURATION);
 		createEAttribute(durationEClass, DURATION__UNIT);
@@ -509,7 +680,8 @@ public class SmartHomePackageImpl extends EPackageImpl implements SmartHomePacka
 		sensorValueEClass = createEClass(SENSOR_VALUE);
 
 		// Create enums
-		operatorEEnum = createEEnum(OPERATOR);
+		integerOperatorEEnum = createEEnum(INTEGER_OPERATOR);
+		booleanOperatorEEnum = createEEnum(BOOLEAN_OPERATOR);
 		durationUnitEEnum = createEEnum(DURATION_UNIT);
 	}
 
@@ -542,9 +714,15 @@ public class SmartHomePackageImpl extends EPackageImpl implements SmartHomePacka
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		integerSensorEClass.getESuperTypes().add(this.getSensor());
+		booleanSensorEClass.getESuperTypes().add(this.getSensor());
+		analogSensorTypeEClass.getESuperTypes().add(this.getSensorType());
+		booleanSensorTypeEClass.getESuperTypes().add(this.getSensorType());
+		booleanConditionEClass.getESuperTypes().add(this.getCondition());
+		integerConditionEClass.getESuperTypes().add(this.getCondition());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(sensorEClass, Sensor.class, "Sensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(sensorEClass, Sensor.class, "Sensor", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSensor_SensorType(), this.getSensorType(), null, "sensorType", null, 1, 1, Sensor.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -552,8 +730,16 @@ public class SmartHomePackageImpl extends EPackageImpl implements SmartHomePacka
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSensor_Name(), ecorePackage.getEString(), "name", null, 1, 1, Sensor.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSensor_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Sensor.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(integerSensorEClass, IntegerSensor.class, "IntegerSensor", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getIntegerSensor_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IntegerSensor.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(booleanSensorEClass, BooleanSensor.class, "BooleanSensor", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBooleanSensor_Value(), ecorePackage.getEBoolean(), "value", null, 0, 1, BooleanSensor.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(locationEClass, Location.class, "Location", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -565,8 +751,14 @@ public class SmartHomePackageImpl extends EPackageImpl implements SmartHomePacka
 
 		initEClass(sensorTypeEClass, SensorType.class, "SensorType", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSensorType_Name(), ecorePackage.getEString(), "name", null, 0, 1, SensorType.class,
+		initEAttribute(getSensorType_Name(), ecorePackage.getEString(), "name", null, 1, 1, SensorType.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(analogSensorTypeEClass, AnalogSensorType.class, "AnalogSensorType", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(booleanSensorTypeEClass, BooleanSensorType.class, "BooleanSensorType", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(smartHomeEClass, SmartHome.class, "SmartHome", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -591,15 +783,32 @@ public class SmartHomePackageImpl extends EPackageImpl implements SmartHomePacka
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
-		initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(conditionEClass, Condition.class, "Condition", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCondition_Sensor(), this.getSensor(), null, "sensor", null, 1, 1, Condition.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCondition_Operand(), ecorePackage.getEInt(), "operand", null, 1, 1, Condition.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCondition_Operator(), this.getOperator(), "operator", null, 1, 1, Condition.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(booleanConditionEClass, BooleanCondition.class, "BooleanCondition", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBooleanCondition_Sensor(), this.getBooleanSensor(), null, "sensor", null, 1, 1,
+				BooleanCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBooleanCondition_Operand(), ecorePackage.getEBoolean(), "operand", null, 1, 1,
+				BooleanCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBooleanCondition_Operator(), this.getBooleanOperator(), "operator", null, 1, 1,
+				BooleanCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(integerConditionEClass, IntegerCondition.class, "IntegerCondition", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getIntegerCondition_Sensor(), this.getIntegerSensor(), null, "sensor", null, 1, 1,
+				IntegerCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIntegerCondition_Operand(), ecorePackage.getEInt(), "operand", null, 1, 1,
+				IntegerCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIntegerCondition_Operator(), this.getIntegerOperator(), "operator", null, 1, 1,
+				IntegerCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(durationEClass, Duration.class, "Duration", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -616,10 +825,14 @@ public class SmartHomePackageImpl extends EPackageImpl implements SmartHomePacka
 				IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
-		initEEnum(operatorEEnum, Operator.class, "Operator");
-		addEEnumLiteral(operatorEEnum, Operator.INFERIOR);
-		addEEnumLiteral(operatorEEnum, Operator.SUPERIOR);
-		addEEnumLiteral(operatorEEnum, Operator.EQUALS);
+		initEEnum(integerOperatorEEnum, IntegerOperator.class, "IntegerOperator");
+		addEEnumLiteral(integerOperatorEEnum, IntegerOperator.INFERIOR);
+		addEEnumLiteral(integerOperatorEEnum, IntegerOperator.SUPERIOR);
+		addEEnumLiteral(integerOperatorEEnum, IntegerOperator.EQUALS);
+
+		initEEnum(booleanOperatorEEnum, BooleanOperator.class, "BooleanOperator");
+		addEEnumLiteral(booleanOperatorEEnum, BooleanOperator.IS);
+		addEEnumLiteral(booleanOperatorEEnum, BooleanOperator.IS_NOT);
 
 		initEEnum(durationUnitEEnum, DurationUnit.class, "DurationUnit");
 		addEEnumLiteral(durationUnitEEnum, DurationUnit.MINUTE);

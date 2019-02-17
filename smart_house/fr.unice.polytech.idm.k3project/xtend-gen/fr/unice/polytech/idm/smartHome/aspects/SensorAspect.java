@@ -1,5 +1,6 @@
 package fr.unice.polytech.idm.smartHome.aspects;
 
+import fr.inria.diverse.k3.al.annotationprocessor.Abstract;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
 import fr.unice.polytech.idm.smartHome.aspects.SensorAspectSensorAspectProperties;
@@ -12,7 +13,7 @@ import smartHome.Sensor;
 
 @Aspect(className = Sensor.class)
 @SuppressWarnings("all")
-public class SensorAspect {
+public abstract class SensorAspect {
   @Step
   public static void initSensor(final Sensor _self) {
     final fr.unice.polytech.idm.smartHome.aspects.SensorAspectSensorAspectProperties _self_ = fr.unice.polytech.idm.smartHome.aspects.SensorAspectSensorAspectContext.getSelf(_self);
@@ -55,7 +56,47 @@ public class SensorAspect {
     };
   }
   
-  private static String currentSt(final Sensor _self) {
+  @Abstract
+  public static void setSensorValue(final Sensor _self) {
+    final fr.unice.polytech.idm.smartHome.aspects.SensorAspectSensorAspectProperties _self_ = fr.unice.polytech.idm.smartHome.aspects.SensorAspectSensorAspectContext.getSelf(_self);
+    	// BeginInjectInto fr.unice.polytech.idm.smartHome.aspects.SensorAspect#void setSensorValue() from fr.unice.polytech.idm.smartHome.aspects.IntegerSensorAspect
+    		if (_self instanceof smartHome.IntegerSensor){
+    			fr.unice.polytech.idm.smartHome.aspects.IntegerSensorAspect.setSensorValue((smartHome.IntegerSensor)_self);
+    		} else
+    		// EndInjectInto fr.unice.polytech.idm.smartHome.aspects.SensorAspect#void setSensorValue() from fr.unice.polytech.idm.smartHome.aspects.IntegerSensorAspect
+    	// BeginInjectInto fr.unice.polytech.idm.smartHome.aspects.SensorAspect#void setSensorValue() from fr.unice.polytech.idm.smartHome.aspects.BooleanSensorAspect
+    		if (_self instanceof smartHome.BooleanSensor){
+    			fr.unice.polytech.idm.smartHome.aspects.BooleanSensorAspect.setSensorValue((smartHome.BooleanSensor)_self);
+    		} else
+    		// EndInjectInto fr.unice.polytech.idm.smartHome.aspects.SensorAspect#void setSensorValue() from fr.unice.polytech.idm.smartHome.aspects.BooleanSensorAspect
+    // #DispatchPointCut_before# void setSensorValue()
+    if (_self instanceof smartHome.Sensor){
+    	fr.unice.polytech.idm.smartHome.aspects.SensorAspect._privk3_setSensorValue(_self_, (smartHome.Sensor)_self);
+    };
+  }
+  
+  @Abstract
+  public static Object getSensorValue(final Sensor _self) {
+    final fr.unice.polytech.idm.smartHome.aspects.SensorAspectSensorAspectProperties _self_ = fr.unice.polytech.idm.smartHome.aspects.SensorAspectSensorAspectContext.getSelf(_self);
+    Object result = null;
+    	// BeginInjectInto fr.unice.polytech.idm.smartHome.aspects.SensorAspect#Object getSensorValue() from fr.unice.polytech.idm.smartHome.aspects.IntegerSensorAspect
+    		if (_self instanceof smartHome.IntegerSensor){
+    			result = fr.unice.polytech.idm.smartHome.aspects.IntegerSensorAspect.getSensorValue((smartHome.IntegerSensor)_self);
+    		} else
+    		// EndInjectInto fr.unice.polytech.idm.smartHome.aspects.SensorAspect#Object getSensorValue() from fr.unice.polytech.idm.smartHome.aspects.IntegerSensorAspect
+    	// BeginInjectInto fr.unice.polytech.idm.smartHome.aspects.SensorAspect#Object getSensorValue() from fr.unice.polytech.idm.smartHome.aspects.BooleanSensorAspect
+    		if (_self instanceof smartHome.BooleanSensor){
+    			result = fr.unice.polytech.idm.smartHome.aspects.BooleanSensorAspect.getSensorValue((smartHome.BooleanSensor)_self);
+    		} else
+    		// EndInjectInto fr.unice.polytech.idm.smartHome.aspects.SensorAspect#Object getSensorValue() from fr.unice.polytech.idm.smartHome.aspects.BooleanSensorAspect
+    // #DispatchPointCut_before# Object getSensorValue()
+    if (_self instanceof smartHome.Sensor){
+    	result = fr.unice.polytech.idm.smartHome.aspects.SensorAspect._privk3_getSensorValue(_self_, (smartHome.Sensor)_self);
+    };
+    return (java.lang.Object)result;
+  }
+  
+  protected static String currentSt(final Sensor _self) {
     final fr.unice.polytech.idm.smartHome.aspects.SensorAspectSensorAspectProperties _self_ = fr.unice.polytech.idm.smartHome.aspects.SensorAspectSensorAspectContext.getSelf(_self);
     Object result = null;
     // #DispatchPointCut_before# String currentSt()
@@ -65,7 +106,7 @@ public class SensorAspect {
     return (java.lang.String)result;
   }
   
-  private static void currentSt(final Sensor _self, final String currentSt) {
+  protected static void currentSt(final Sensor _self, final String currentSt) {
     final fr.unice.polytech.idm.smartHome.aspects.SensorAspectSensorAspectProperties _self_ = fr.unice.polytech.idm.smartHome.aspects.SensorAspectSensorAspectContext.getSelf(_self);
     // #DispatchPointCut_before# void currentSt(String)
     if (_self instanceof smartHome.Sensor){
@@ -119,7 +160,7 @@ public class SensorAspect {
       SensorAspect.br(_self, _bufferedReader);
       SensorAspect.currentSt(_self, SensorAspect.br(_self).readLine());
       SensorAspect.nextSt(_self, SensorAspect.br(_self).readLine());
-      _self.setValue(Integer.parseInt(SensorAspect.currentSt(_self).split(" ")[1]));
+      SensorAspect.setSensorValue(_self);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -134,12 +175,20 @@ public class SensorAspect {
         if (_equals) {
           SensorAspect.currentSt(_self, SensorAspect.nextSt(_self));
           SensorAspect.nextSt(_self, SensorAspect.br(_self).readLine());
-          _self.setValue(Integer.parseInt(SensorAspect.currentSt(_self).split(" ")[1]));
+          SensorAspect.setSensorValue(_self);
         }
       }
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
+  }
+  
+  protected static void _privk3_setSensorValue(final SensorAspectSensorAspectProperties _self_, final Sensor _self) {
+    throw new java.lang.RuntimeException("Not implemented");
+  }
+  
+  protected static Object _privk3_getSensorValue(final SensorAspectSensorAspectProperties _self_, final Sensor _self) {
+    throw new java.lang.RuntimeException("Not implemented");
   }
   
   protected static String _privk3_currentSt(final SensorAspectSensorAspectProperties _self_, final Sensor _self) {

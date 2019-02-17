@@ -72,6 +72,16 @@ public class SmartHomeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseIntegerSensor(IntegerSensor object) {
+			return createIntegerSensorAdapter();
+		}
+
+		@Override
+		public Adapter caseBooleanSensor(BooleanSensor object) {
+			return createBooleanSensorAdapter();
+		}
+
+		@Override
 		public Adapter caseLocation(Location object) {
 			return createLocationAdapter();
 		}
@@ -79,6 +89,16 @@ public class SmartHomeAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseSensorType(SensorType object) {
 			return createSensorTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseAnalogSensorType(AnalogSensorType object) {
+			return createAnalogSensorTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseBooleanSensorType(BooleanSensorType object) {
+			return createBooleanSensorTypeAdapter();
 		}
 
 		@Override
@@ -94,6 +114,16 @@ public class SmartHomeAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseCondition(Condition object) {
 			return createConditionAdapter();
+		}
+
+		@Override
+		public Adapter caseBooleanCondition(BooleanCondition object) {
+			return createBooleanConditionAdapter();
+		}
+
+		@Override
+		public Adapter caseIntegerCondition(IntegerCondition object) {
+			return createIntegerConditionAdapter();
 		}
 
 		@Override
@@ -145,6 +175,34 @@ public class SmartHomeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link smartHome.IntegerSensor <em>Integer Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see smartHome.IntegerSensor
+	 * @generated
+	 */
+	public Adapter createIntegerSensorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link smartHome.BooleanSensor <em>Boolean Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see smartHome.BooleanSensor
+	 * @generated
+	 */
+	public Adapter createBooleanSensorAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link smartHome.Location <em>Location</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -169,6 +227,34 @@ public class SmartHomeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSensorTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link smartHome.AnalogSensorType <em>Analog Sensor Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see smartHome.AnalogSensorType
+	 * @generated
+	 */
+	public Adapter createAnalogSensorTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link smartHome.BooleanSensorType <em>Boolean Sensor Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see smartHome.BooleanSensorType
+	 * @generated
+	 */
+	public Adapter createBooleanSensorTypeAdapter() {
 		return null;
 	}
 
@@ -211,6 +297,34 @@ public class SmartHomeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConditionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link smartHome.BooleanCondition <em>Boolean Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see smartHome.BooleanCondition
+	 * @generated
+	 */
+	public Adapter createBooleanConditionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link smartHome.IntegerCondition <em>Integer Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see smartHome.IntegerCondition
+	 * @generated
+	 */
+	public Adapter createIntegerConditionAdapter() {
 		return null;
 	}
 

@@ -73,6 +73,24 @@ public class SmartHomeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case SmartHomePackage.INTEGER_SENSOR: {
+			IntegerSensor integerSensor = (IntegerSensor) theEObject;
+			T result = caseIntegerSensor(integerSensor);
+			if (result == null)
+				result = caseSensor(integerSensor);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SmartHomePackage.BOOLEAN_SENSOR: {
+			BooleanSensor booleanSensor = (BooleanSensor) theEObject;
+			T result = caseBooleanSensor(booleanSensor);
+			if (result == null)
+				result = caseSensor(booleanSensor);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case SmartHomePackage.LOCATION: {
 			Location location = (Location) theEObject;
 			T result = caseLocation(location);
@@ -83,6 +101,24 @@ public class SmartHomeSwitch<T> extends Switch<T> {
 		case SmartHomePackage.SENSOR_TYPE: {
 			SensorType sensorType = (SensorType) theEObject;
 			T result = caseSensorType(sensorType);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SmartHomePackage.ANALOG_SENSOR_TYPE: {
+			AnalogSensorType analogSensorType = (AnalogSensorType) theEObject;
+			T result = caseAnalogSensorType(analogSensorType);
+			if (result == null)
+				result = caseSensorType(analogSensorType);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SmartHomePackage.BOOLEAN_SENSOR_TYPE: {
+			BooleanSensorType booleanSensorType = (BooleanSensorType) theEObject;
+			T result = caseBooleanSensorType(booleanSensorType);
+			if (result == null)
+				result = caseSensorType(booleanSensorType);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -104,6 +140,24 @@ public class SmartHomeSwitch<T> extends Switch<T> {
 		case SmartHomePackage.CONDITION: {
 			Condition condition = (Condition) theEObject;
 			T result = caseCondition(condition);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SmartHomePackage.BOOLEAN_CONDITION: {
+			BooleanCondition booleanCondition = (BooleanCondition) theEObject;
+			T result = caseBooleanCondition(booleanCondition);
+			if (result == null)
+				result = caseCondition(booleanCondition);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SmartHomePackage.INTEGER_CONDITION: {
+			IntegerCondition integerCondition = (IntegerCondition) theEObject;
+			T result = caseIntegerCondition(integerCondition);
+			if (result == null)
+				result = caseCondition(integerCondition);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -150,6 +204,36 @@ public class SmartHomeSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Integer Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Integer Sensor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIntegerSensor(IntegerSensor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Boolean Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Boolean Sensor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBooleanSensor(BooleanSensor object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Location</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -176,6 +260,36 @@ public class SmartHomeSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSensorType(SensorType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Analog Sensor Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Analog Sensor Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAnalogSensorType(AnalogSensorType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Boolean Sensor Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Boolean Sensor Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBooleanSensorType(BooleanSensorType object) {
 		return null;
 	}
 
@@ -221,6 +335,36 @@ public class SmartHomeSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCondition(Condition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Boolean Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Boolean Condition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBooleanCondition(BooleanCondition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Integer Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Integer Condition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIntegerCondition(IntegerCondition object) {
 		return null;
 	}
 

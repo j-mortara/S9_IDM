@@ -31,8 +31,13 @@ public class SmartHomeDSLParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, SmartHomeDSLGrammarAccess grammarAccess) {
+			builder.put(grammarAccess.getSensorTypeAccess().getAlternatives(), "rule__SensorType__Alternatives");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
-			builder.put(grammarAccess.getOperatorAccess().getAlternatives(), "rule__Operator__Alternatives");
+			builder.put(grammarAccess.getSensorAccess().getAlternatives(), "rule__Sensor__Alternatives");
+			builder.put(grammarAccess.getConditionAccess().getAlternatives(), "rule__Condition__Alternatives");
+			builder.put(grammarAccess.getEBooleanAccess().getAlternatives(), "rule__EBoolean__Alternatives");
+			builder.put(grammarAccess.getIntegerOperatorAccess().getAlternatives(), "rule__IntegerOperator__Alternatives");
+			builder.put(grammarAccess.getBooleanOperatorAccess().getAlternatives(), "rule__BooleanOperator__Alternatives");
 			builder.put(grammarAccess.getDurationUnitAccess().getAlternatives(), "rule__DurationUnit__Alternatives");
 			builder.put(grammarAccess.getSmartHomeAccess().getGroup(), "rule__SmartHome__Group__0");
 			builder.put(grammarAccess.getSmartHomeAccess().getGroup_5(), "rule__SmartHome__Group_5__0");
@@ -41,11 +46,14 @@ public class SmartHomeDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLocationAccess().getGroup(), "rule__Location__Group__0");
 			builder.put(grammarAccess.getLocationAccess().getGroup_4(), "rule__Location__Group_4__0");
 			builder.put(grammarAccess.getLocationAccess().getGroup_4_1(), "rule__Location__Group_4_1__0");
-			builder.put(grammarAccess.getSensorTypeAccess().getGroup(), "rule__SensorType__Group__0");
-			builder.put(grammarAccess.getSensorAccess().getGroup(), "rule__Sensor__Group__0");
+			builder.put(grammarAccess.getAnalogSensorTypeAccess().getGroup(), "rule__AnalogSensorType__Group__0");
+			builder.put(grammarAccess.getBooleanSensorTypeAccess().getGroup(), "rule__BooleanSensorType__Group__0");
+			builder.put(grammarAccess.getIntegerSensorAccess().getGroup(), "rule__IntegerSensor__Group__0");
+			builder.put(grammarAccess.getBooleanSensorAccess().getGroup(), "rule__BooleanSensor__Group__0");
 			builder.put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
 			builder.put(grammarAccess.getRuleAccess().getGroup_2(), "rule__Rule__Group_2__0");
-			builder.put(grammarAccess.getConditionAccess().getGroup(), "rule__Condition__Group__0");
+			builder.put(grammarAccess.getIntegerConditionAccess().getGroup(), "rule__IntegerCondition__Group__0");
+			builder.put(grammarAccess.getBooleanConditionAccess().getGroup(), "rule__BooleanCondition__Group__0");
 			builder.put(grammarAccess.getDurationAccess().getGroup(), "rule__Duration__Group__0");
 			builder.put(grammarAccess.getSmartHomeAccess().getSensorTypesAssignment_4(), "rule__SmartHome__SensorTypesAssignment_4");
 			builder.put(grammarAccess.getSmartHomeAccess().getSensorTypesAssignment_5_1(), "rule__SmartHome__SensorTypesAssignment_5_1");
@@ -56,17 +64,24 @@ public class SmartHomeDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLocationAccess().getNameAssignment_2(), "rule__Location__NameAssignment_2");
 			builder.put(grammarAccess.getLocationAccess().getSensorsAssignment_4_0(), "rule__Location__SensorsAssignment_4_0");
 			builder.put(grammarAccess.getLocationAccess().getSensorsAssignment_4_1_1(), "rule__Location__SensorsAssignment_4_1_1");
-			builder.put(grammarAccess.getSensorTypeAccess().getNameAssignment_1(), "rule__SensorType__NameAssignment_1");
-			builder.put(grammarAccess.getSensorAccess().getNameAssignment_1(), "rule__Sensor__NameAssignment_1");
-			builder.put(grammarAccess.getSensorAccess().getSensorTypeAssignment_2(), "rule__Sensor__SensorTypeAssignment_2");
-			builder.put(grammarAccess.getSensorAccess().getDataFileAssignment_4(), "rule__Sensor__DataFileAssignment_4");
+			builder.put(grammarAccess.getAnalogSensorTypeAccess().getNameAssignment_1(), "rule__AnalogSensorType__NameAssignment_1");
+			builder.put(grammarAccess.getBooleanSensorTypeAccess().getNameAssignment_1(), "rule__BooleanSensorType__NameAssignment_1");
+			builder.put(grammarAccess.getIntegerSensorAccess().getNameAssignment_1(), "rule__IntegerSensor__NameAssignment_1");
+			builder.put(grammarAccess.getIntegerSensorAccess().getSensorTypeAssignment_2(), "rule__IntegerSensor__SensorTypeAssignment_2");
+			builder.put(grammarAccess.getIntegerSensorAccess().getDataFileAssignment_4(), "rule__IntegerSensor__DataFileAssignment_4");
+			builder.put(grammarAccess.getBooleanSensorAccess().getNameAssignment_1(), "rule__BooleanSensor__NameAssignment_1");
+			builder.put(grammarAccess.getBooleanSensorAccess().getSensorTypeAssignment_2(), "rule__BooleanSensor__SensorTypeAssignment_2");
+			builder.put(grammarAccess.getBooleanSensorAccess().getDataFileAssignment_4(), "rule__BooleanSensor__DataFileAssignment_4");
 			builder.put(grammarAccess.getRuleAccess().getConditionsAssignment_1(), "rule__Rule__ConditionsAssignment_1");
 			builder.put(grammarAccess.getRuleAccess().getConditionsAssignment_2_1(), "rule__Rule__ConditionsAssignment_2_1");
 			builder.put(grammarAccess.getRuleAccess().getDurationAssignment_4(), "rule__Rule__DurationAssignment_4");
 			builder.put(grammarAccess.getRuleAccess().getEventAssignment_6(), "rule__Rule__EventAssignment_6");
-			builder.put(grammarAccess.getConditionAccess().getSensorAssignment_0(), "rule__Condition__SensorAssignment_0");
-			builder.put(grammarAccess.getConditionAccess().getOperatorAssignment_1(), "rule__Condition__OperatorAssignment_1");
-			builder.put(grammarAccess.getConditionAccess().getOperandAssignment_2(), "rule__Condition__OperandAssignment_2");
+			builder.put(grammarAccess.getIntegerConditionAccess().getSensorAssignment_0(), "rule__IntegerCondition__SensorAssignment_0");
+			builder.put(grammarAccess.getIntegerConditionAccess().getOperatorAssignment_1(), "rule__IntegerCondition__OperatorAssignment_1");
+			builder.put(grammarAccess.getIntegerConditionAccess().getOperandAssignment_2(), "rule__IntegerCondition__OperandAssignment_2");
+			builder.put(grammarAccess.getBooleanConditionAccess().getSensorAssignment_0(), "rule__BooleanCondition__SensorAssignment_0");
+			builder.put(grammarAccess.getBooleanConditionAccess().getOperatorAssignment_1(), "rule__BooleanCondition__OperatorAssignment_1");
+			builder.put(grammarAccess.getBooleanConditionAccess().getOperandAssignment_2(), "rule__BooleanCondition__OperandAssignment_2");
 			builder.put(grammarAccess.getDurationAccess().getValueAssignment_0(), "rule__Duration__ValueAssignment_0");
 			builder.put(grammarAccess.getDurationAccess().getUnitAssignment_1(), "rule__Duration__UnitAssignment_1");
 			builder.put(grammarAccess.getEventAccess().getDescriptionAssignment(), "rule__Event__DescriptionAssignment");

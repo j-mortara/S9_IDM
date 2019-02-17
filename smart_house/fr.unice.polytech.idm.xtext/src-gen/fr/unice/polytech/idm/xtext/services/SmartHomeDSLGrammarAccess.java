@@ -221,22 +221,64 @@ public class SmartHomeDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class SensorTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.idm.xtext.SmartHomeDSL.SensorType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cAnalogSensorTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cBooleanSensorTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//SensorType:
+		//	AnalogSensorType | BooleanSensorType;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//AnalogSensorType | BooleanSensorType
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//AnalogSensorType
+		public RuleCall getAnalogSensorTypeParserRuleCall_0() { return cAnalogSensorTypeParserRuleCall_0; }
+		
+		//BooleanSensorType
+		public RuleCall getBooleanSensorTypeParserRuleCall_1() { return cBooleanSensorTypeParserRuleCall_1; }
+	}
+	public class AnalogSensorTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.idm.xtext.SmartHomeDSL.AnalogSensorType");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cSensorTypeAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cAnalogKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
-		//SensorType:
-		//	{SensorType} name=EString?;
+		//AnalogSensorType:
+		//	"analog" name=EString;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{SensorType} name=EString?
+		//"analog" name=EString
 		public Group getGroup() { return cGroup; }
 		
-		//{SensorType}
-		public Action getSensorTypeAction_0() { return cSensorTypeAction_0; }
+		//"analog"
+		public Keyword getAnalogKeyword_0() { return cAnalogKeyword_0; }
 		
-		//name=EString?
+		//name=EString
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+	}
+	public class BooleanSensorTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.idm.xtext.SmartHomeDSL.BooleanSensorType");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cBooleanKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//BooleanSensorType:
+		//	"boolean" name=EString;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"boolean" name=EString
+		public Group getGroup() { return cGroup; }
+		
+		//"boolean"
+		public Keyword getBooleanKeyword_0() { return cBooleanKeyword_0; }
+		
+		//name=EString
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//EString
@@ -263,27 +305,46 @@ public class SmartHomeDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class SensorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.idm.xtext.SmartHomeDSL.Sensor");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cIntegerSensorParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cBooleanSensorParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Sensor:
+		//	IntegerSensor | BooleanSensor;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//IntegerSensor | BooleanSensor
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//IntegerSensor
+		public RuleCall getIntegerSensorParserRuleCall_0() { return cIntegerSensorParserRuleCall_0; }
+		
+		//BooleanSensor
+		public RuleCall getBooleanSensorParserRuleCall_1() { return cBooleanSensorParserRuleCall_1; }
+	}
+	public class IntegerSensorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.idm.xtext.SmartHomeDSL.IntegerSensor");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSensorKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cIntegerSensorKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cSensorTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cSensorTypeSensorTypeCrossReference_2_0 = (CrossReference)cSensorTypeAssignment_2.eContents().get(0);
-		private final RuleCall cSensorTypeSensorTypeEStringParserRuleCall_2_0_1 = (RuleCall)cSensorTypeSensorTypeCrossReference_2_0.eContents().get(1);
+		private final CrossReference cSensorTypeAnalogSensorTypeCrossReference_2_0 = (CrossReference)cSensorTypeAssignment_2.eContents().get(0);
+		private final RuleCall cSensorTypeAnalogSensorTypeEStringParserRuleCall_2_0_1 = (RuleCall)cSensorTypeAnalogSensorTypeCrossReference_2_0.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cDataFileAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cDataFileEStringParserRuleCall_4_0 = (RuleCall)cDataFileAssignment_4.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//Sensor:
-		//	'Sensor' name=EString sensorType=[SensorType|EString] '(' dataFile=EString ')';
+		//IntegerSensor:
+		//	'IntegerSensor' name=EString sensorType=[AnalogSensorType|EString] '(' dataFile=EString ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Sensor' name=EString sensorType=[SensorType|EString] '(' dataFile=EString ')'
+		//'IntegerSensor' name=EString sensorType=[AnalogSensorType|EString] '(' dataFile=EString ')'
 		public Group getGroup() { return cGroup; }
 		
-		//'Sensor'
-		public Keyword getSensorKeyword_0() { return cSensorKeyword_0; }
+		//'IntegerSensor'
+		public Keyword getIntegerSensorKeyword_0() { return cIntegerSensorKeyword_0; }
 		
 		//name=EString
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -291,14 +352,65 @@ public class SmartHomeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
 		
-		//sensorType=[SensorType|EString]
+		//sensorType=[AnalogSensorType|EString]
 		public Assignment getSensorTypeAssignment_2() { return cSensorTypeAssignment_2; }
 		
-		//[SensorType|EString]
-		public CrossReference getSensorTypeSensorTypeCrossReference_2_0() { return cSensorTypeSensorTypeCrossReference_2_0; }
+		//[AnalogSensorType|EString]
+		public CrossReference getSensorTypeAnalogSensorTypeCrossReference_2_0() { return cSensorTypeAnalogSensorTypeCrossReference_2_0; }
 		
 		//EString
-		public RuleCall getSensorTypeSensorTypeEStringParserRuleCall_2_0_1() { return cSensorTypeSensorTypeEStringParserRuleCall_2_0_1; }
+		public RuleCall getSensorTypeAnalogSensorTypeEStringParserRuleCall_2_0_1() { return cSensorTypeAnalogSensorTypeEStringParserRuleCall_2_0_1; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
+		
+		//dataFile=EString
+		public Assignment getDataFileAssignment_4() { return cDataFileAssignment_4; }
+		
+		//EString
+		public RuleCall getDataFileEStringParserRuleCall_4_0() { return cDataFileEStringParserRuleCall_4_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+	}
+	public class BooleanSensorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.idm.xtext.SmartHomeDSL.BooleanSensor");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cBooleanSensorKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cSensorTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cSensorTypeBooleanSensorTypeCrossReference_2_0 = (CrossReference)cSensorTypeAssignment_2.eContents().get(0);
+		private final RuleCall cSensorTypeBooleanSensorTypeEStringParserRuleCall_2_0_1 = (RuleCall)cSensorTypeBooleanSensorTypeCrossReference_2_0.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cDataFileAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cDataFileEStringParserRuleCall_4_0 = (RuleCall)cDataFileAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//BooleanSensor:
+		//	'BooleanSensor' name=EString sensorType=[BooleanSensorType|EString] '(' dataFile=EString ')';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'BooleanSensor' name=EString sensorType=[BooleanSensorType|EString] '(' dataFile=EString ')'
+		public Group getGroup() { return cGroup; }
+		
+		//'BooleanSensor'
+		public Keyword getBooleanSensorKeyword_0() { return cBooleanSensorKeyword_0; }
+		
+		//name=EString
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+		
+		//sensorType=[BooleanSensorType|EString]
+		public Assignment getSensorTypeAssignment_2() { return cSensorTypeAssignment_2; }
+		
+		//[BooleanSensorType|EString]
+		public CrossReference getSensorTypeBooleanSensorTypeCrossReference_2_0() { return cSensorTypeBooleanSensorTypeCrossReference_2_0; }
+		
+		//EString
+		public RuleCall getSensorTypeBooleanSensorTypeEStringParserRuleCall_2_0_1() { return cSensorTypeBooleanSensorTypeEStringParserRuleCall_2_0_1; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
@@ -377,42 +489,100 @@ public class SmartHomeDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class ConditionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.idm.xtext.SmartHomeDSL.Condition");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cIntegerConditionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cBooleanConditionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Condition:
+		//	IntegerCondition | BooleanCondition;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//IntegerCondition | BooleanCondition
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//IntegerCondition
+		public RuleCall getIntegerConditionParserRuleCall_0() { return cIntegerConditionParserRuleCall_0; }
+		
+		//BooleanCondition
+		public RuleCall getBooleanConditionParserRuleCall_1() { return cBooleanConditionParserRuleCall_1; }
+	}
+	public class IntegerConditionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.idm.xtext.SmartHomeDSL.IntegerCondition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cSensorAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cSensorSensorCrossReference_0_0 = (CrossReference)cSensorAssignment_0.eContents().get(0);
-		private final RuleCall cSensorSensorEStringParserRuleCall_0_0_1 = (RuleCall)cSensorSensorCrossReference_0_0.eContents().get(1);
+		private final CrossReference cSensorIntegerSensorCrossReference_0_0 = (CrossReference)cSensorAssignment_0.eContents().get(0);
+		private final RuleCall cSensorIntegerSensorEStringParserRuleCall_0_0_1 = (RuleCall)cSensorIntegerSensorCrossReference_0_0.eContents().get(1);
 		private final Assignment cOperatorAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cOperatorOperatorEnumRuleCall_1_0 = (RuleCall)cOperatorAssignment_1.eContents().get(0);
+		private final RuleCall cOperatorIntegerOperatorEnumRuleCall_1_0 = (RuleCall)cOperatorAssignment_1.eContents().get(0);
 		private final Assignment cOperandAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cOperandEIntParserRuleCall_2_0 = (RuleCall)cOperandAssignment_2.eContents().get(0);
 		
-		//Condition:
-		//	sensor=[Sensor|EString] operator=Operator operand=EInt;
+		//IntegerCondition:
+		//	sensor=[IntegerSensor|EString] operator=IntegerOperator operand=EInt;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//sensor=[Sensor|EString] operator=Operator operand=EInt
+		//sensor=[IntegerSensor|EString] operator=IntegerOperator operand=EInt
 		public Group getGroup() { return cGroup; }
 		
-		//sensor=[Sensor|EString]
+		//sensor=[IntegerSensor|EString]
 		public Assignment getSensorAssignment_0() { return cSensorAssignment_0; }
 		
-		//[Sensor|EString]
-		public CrossReference getSensorSensorCrossReference_0_0() { return cSensorSensorCrossReference_0_0; }
+		//[IntegerSensor|EString]
+		public CrossReference getSensorIntegerSensorCrossReference_0_0() { return cSensorIntegerSensorCrossReference_0_0; }
 		
 		//EString
-		public RuleCall getSensorSensorEStringParserRuleCall_0_0_1() { return cSensorSensorEStringParserRuleCall_0_0_1; }
+		public RuleCall getSensorIntegerSensorEStringParserRuleCall_0_0_1() { return cSensorIntegerSensorEStringParserRuleCall_0_0_1; }
 		
-		//operator=Operator
+		//operator=IntegerOperator
 		public Assignment getOperatorAssignment_1() { return cOperatorAssignment_1; }
 		
-		//Operator
-		public RuleCall getOperatorOperatorEnumRuleCall_1_0() { return cOperatorOperatorEnumRuleCall_1_0; }
+		//IntegerOperator
+		public RuleCall getOperatorIntegerOperatorEnumRuleCall_1_0() { return cOperatorIntegerOperatorEnumRuleCall_1_0; }
 		
 		//operand=EInt
 		public Assignment getOperandAssignment_2() { return cOperandAssignment_2; }
 		
 		//EInt
 		public RuleCall getOperandEIntParserRuleCall_2_0() { return cOperandEIntParserRuleCall_2_0; }
+	}
+	public class BooleanConditionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.idm.xtext.SmartHomeDSL.BooleanCondition");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cSensorAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cSensorBooleanSensorCrossReference_0_0 = (CrossReference)cSensorAssignment_0.eContents().get(0);
+		private final RuleCall cSensorBooleanSensorEStringParserRuleCall_0_0_1 = (RuleCall)cSensorBooleanSensorCrossReference_0_0.eContents().get(1);
+		private final Assignment cOperatorAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cOperatorBooleanOperatorEnumRuleCall_1_0 = (RuleCall)cOperatorAssignment_1.eContents().get(0);
+		private final Assignment cOperandAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cOperandEBooleanParserRuleCall_2_0 = (RuleCall)cOperandAssignment_2.eContents().get(0);
+		
+		//BooleanCondition:
+		//	sensor=[BooleanSensor|EString] operator=BooleanOperator operand=EBoolean;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//sensor=[BooleanSensor|EString] operator=BooleanOperator operand=EBoolean
+		public Group getGroup() { return cGroup; }
+		
+		//sensor=[BooleanSensor|EString]
+		public Assignment getSensorAssignment_0() { return cSensorAssignment_0; }
+		
+		//[BooleanSensor|EString]
+		public CrossReference getSensorBooleanSensorCrossReference_0_0() { return cSensorBooleanSensorCrossReference_0_0; }
+		
+		//EString
+		public RuleCall getSensorBooleanSensorEStringParserRuleCall_0_0_1() { return cSensorBooleanSensorEStringParserRuleCall_0_0_1; }
+		
+		//operator=BooleanOperator
+		public Assignment getOperatorAssignment_1() { return cOperatorAssignment_1; }
+		
+		//BooleanOperator
+		public RuleCall getOperatorBooleanOperatorEnumRuleCall_1_0() { return cOperatorBooleanOperatorEnumRuleCall_1_0; }
+		
+		//operand=EBoolean
+		public Assignment getOperandAssignment_2() { return cOperandAssignment_2; }
+		
+		//EBoolean
+		public RuleCall getOperandEBooleanParserRuleCall_2_0() { return cOperandEBooleanParserRuleCall_2_0; }
 	}
 	public class EIntElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.idm.xtext.SmartHomeDSL.EInt");
@@ -424,6 +594,25 @@ public class SmartHomeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//INT
 		public RuleCall getINTTerminalRuleCall() { return cINTTerminalRuleCall; }
+	}
+	public class EBooleanElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.idm.xtext.SmartHomeDSL.EBoolean");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cTrueKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cFalseKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		
+		//EBoolean ecore::EBoolean:
+		//	'true' | 'false';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'true' | 'false'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'true'
+		public Keyword getTrueKeyword_0() { return cTrueKeyword_0; }
+		
+		//'false'
+		public Keyword getFalseKeyword_1() { return cFalseKeyword_1; }
 	}
 	public class DurationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.idm.xtext.SmartHomeDSL.Duration");
@@ -468,8 +657,8 @@ public class SmartHomeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getDescriptionEStringParserRuleCall_0() { return cDescriptionEStringParserRuleCall_0; }
 	}
 	
-	public class OperatorElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.idm.xtext.SmartHomeDSL.Operator");
+	public class IntegerOperatorElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.idm.xtext.SmartHomeDSL.IntegerOperator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cEQUALSEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cEQUALSEqualsSignKeyword_0_0 = (Keyword)cEQUALSEnumLiteralDeclaration_0.eContents().get(0);
@@ -478,7 +667,7 @@ public class SmartHomeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final EnumLiteralDeclaration cSUPERIOREnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
 		private final Keyword cSUPERIORGreaterThanSignKeyword_2_0 = (Keyword)cSUPERIOREnumLiteralDeclaration_2.eContents().get(0);
 		
-		//enum Operator:
+		//enum IntegerOperator:
 		//	EQUALS='=' | INFERIOR='<' | SUPERIOR='>';
 		public EnumRule getRule() { return rule; }
 		
@@ -502,6 +691,33 @@ public class SmartHomeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'>'
 		public Keyword getSUPERIORGreaterThanSignKeyword_2_0() { return cSUPERIORGreaterThanSignKeyword_2_0; }
+	}
+	public class BooleanOperatorElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.idm.xtext.SmartHomeDSL.BooleanOperator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cISEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cISIsKeyword_0_0 = (Keyword)cISEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cIS_NOTEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cIS_NOTIsnotKeyword_1_0 = (Keyword)cIS_NOTEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum BooleanOperator:
+		//	IS="is" | IS_NOT="isnot";
+		public EnumRule getRule() { return rule; }
+		
+		//IS="is" | IS_NOT="isnot"
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//IS="is"
+		public EnumLiteralDeclaration getISEnumLiteralDeclaration_0() { return cISEnumLiteralDeclaration_0; }
+		
+		//"is"
+		public Keyword getISIsKeyword_0_0() { return cISIsKeyword_0_0; }
+		
+		//IS_NOT="isnot"
+		public EnumLiteralDeclaration getIS_NOTEnumLiteralDeclaration_1() { return cIS_NOTEnumLiteralDeclaration_1; }
+		
+		//"isnot"
+		public Keyword getIS_NOTIsnotKeyword_1_0() { return cIS_NOTIsnotKeyword_1_0; }
 	}
 	public class DurationUnitElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.idm.xtext.SmartHomeDSL.DurationUnit");
@@ -534,12 +750,20 @@ public class SmartHomeDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final SmartHomeElements pSmartHome;
 	private final LocationElements pLocation;
 	private final SensorTypeElements pSensorType;
+	private final AnalogSensorTypeElements pAnalogSensorType;
+	private final BooleanSensorTypeElements pBooleanSensorType;
 	private final EStringElements pEString;
 	private final SensorElements pSensor;
+	private final IntegerSensorElements pIntegerSensor;
+	private final BooleanSensorElements pBooleanSensor;
 	private final RuleElements pRule;
 	private final ConditionElements pCondition;
+	private final IntegerConditionElements pIntegerCondition;
+	private final BooleanConditionElements pBooleanCondition;
 	private final EIntElements pEInt;
-	private final OperatorElements eOperator;
+	private final EBooleanElements pEBoolean;
+	private final IntegerOperatorElements eIntegerOperator;
+	private final BooleanOperatorElements eBooleanOperator;
 	private final DurationUnitElements eDurationUnit;
 	private final DurationElements pDuration;
 	private final EventElements pEvent;
@@ -556,12 +780,20 @@ public class SmartHomeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pSmartHome = new SmartHomeElements();
 		this.pLocation = new LocationElements();
 		this.pSensorType = new SensorTypeElements();
+		this.pAnalogSensorType = new AnalogSensorTypeElements();
+		this.pBooleanSensorType = new BooleanSensorTypeElements();
 		this.pEString = new EStringElements();
 		this.pSensor = new SensorElements();
+		this.pIntegerSensor = new IntegerSensorElements();
+		this.pBooleanSensor = new BooleanSensorElements();
 		this.pRule = new RuleElements();
 		this.pCondition = new ConditionElements();
+		this.pIntegerCondition = new IntegerConditionElements();
+		this.pBooleanCondition = new BooleanConditionElements();
 		this.pEInt = new EIntElements();
-		this.eOperator = new OperatorElements();
+		this.pEBoolean = new EBooleanElements();
+		this.eIntegerOperator = new IntegerOperatorElements();
+		this.eBooleanOperator = new BooleanOperatorElements();
 		this.eDurationUnit = new DurationUnitElements();
 		this.pDuration = new DurationElements();
 		this.pEvent = new EventElements();
@@ -624,13 +856,33 @@ public class SmartHomeDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SensorType:
-	//	{SensorType} name=EString?;
+	//	AnalogSensorType | BooleanSensorType;
 	public SensorTypeElements getSensorTypeAccess() {
 		return pSensorType;
 	}
 	
 	public ParserRule getSensorTypeRule() {
 		return getSensorTypeAccess().getRule();
+	}
+	
+	//AnalogSensorType:
+	//	"analog" name=EString;
+	public AnalogSensorTypeElements getAnalogSensorTypeAccess() {
+		return pAnalogSensorType;
+	}
+	
+	public ParserRule getAnalogSensorTypeRule() {
+		return getAnalogSensorTypeAccess().getRule();
+	}
+	
+	//BooleanSensorType:
+	//	"boolean" name=EString;
+	public BooleanSensorTypeElements getBooleanSensorTypeAccess() {
+		return pBooleanSensorType;
+	}
+	
+	public ParserRule getBooleanSensorTypeRule() {
+		return getBooleanSensorTypeAccess().getRule();
 	}
 	
 	//EString:
@@ -644,13 +896,33 @@ public class SmartHomeDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Sensor:
-	//	'Sensor' name=EString sensorType=[SensorType|EString] '(' dataFile=EString ')';
+	//	IntegerSensor | BooleanSensor;
 	public SensorElements getSensorAccess() {
 		return pSensor;
 	}
 	
 	public ParserRule getSensorRule() {
 		return getSensorAccess().getRule();
+	}
+	
+	//IntegerSensor:
+	//	'IntegerSensor' name=EString sensorType=[AnalogSensorType|EString] '(' dataFile=EString ')';
+	public IntegerSensorElements getIntegerSensorAccess() {
+		return pIntegerSensor;
+	}
+	
+	public ParserRule getIntegerSensorRule() {
+		return getIntegerSensorAccess().getRule();
+	}
+	
+	//BooleanSensor:
+	//	'BooleanSensor' name=EString sensorType=[BooleanSensorType|EString] '(' dataFile=EString ')';
+	public BooleanSensorElements getBooleanSensorAccess() {
+		return pBooleanSensor;
+	}
+	
+	public ParserRule getBooleanSensorRule() {
+		return getBooleanSensorAccess().getRule();
 	}
 	
 	//Rule:
@@ -664,13 +936,33 @@ public class SmartHomeDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Condition:
-	//	sensor=[Sensor|EString] operator=Operator operand=EInt;
+	//	IntegerCondition | BooleanCondition;
 	public ConditionElements getConditionAccess() {
 		return pCondition;
 	}
 	
 	public ParserRule getConditionRule() {
 		return getConditionAccess().getRule();
+	}
+	
+	//IntegerCondition:
+	//	sensor=[IntegerSensor|EString] operator=IntegerOperator operand=EInt;
+	public IntegerConditionElements getIntegerConditionAccess() {
+		return pIntegerCondition;
+	}
+	
+	public ParserRule getIntegerConditionRule() {
+		return getIntegerConditionAccess().getRule();
+	}
+	
+	//BooleanCondition:
+	//	sensor=[BooleanSensor|EString] operator=BooleanOperator operand=EBoolean;
+	public BooleanConditionElements getBooleanConditionAccess() {
+		return pBooleanCondition;
+	}
+	
+	public ParserRule getBooleanConditionRule() {
+		return getBooleanConditionAccess().getRule();
 	}
 	
 	//EInt ecore::EInt:
@@ -683,14 +975,34 @@ public class SmartHomeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getEIntAccess().getRule();
 	}
 	
-	//enum Operator:
-	//	EQUALS='=' | INFERIOR='<' | SUPERIOR='>';
-	public OperatorElements getOperatorAccess() {
-		return eOperator;
+	//EBoolean ecore::EBoolean:
+	//	'true' | 'false';
+	public EBooleanElements getEBooleanAccess() {
+		return pEBoolean;
 	}
 	
-	public EnumRule getOperatorRule() {
-		return getOperatorAccess().getRule();
+	public ParserRule getEBooleanRule() {
+		return getEBooleanAccess().getRule();
+	}
+	
+	//enum IntegerOperator:
+	//	EQUALS='=' | INFERIOR='<' | SUPERIOR='>';
+	public IntegerOperatorElements getIntegerOperatorAccess() {
+		return eIntegerOperator;
+	}
+	
+	public EnumRule getIntegerOperatorRule() {
+		return getIntegerOperatorAccess().getRule();
+	}
+	
+	//enum BooleanOperator:
+	//	IS="is" | IS_NOT="isnot";
+	public BooleanOperatorElements getBooleanOperatorAccess() {
+		return eBooleanOperator;
+	}
+	
+	public EnumRule getBooleanOperatorRule() {
+		return getBooleanOperatorAccess().getRule();
 	}
 	
 	//enum DurationUnit:

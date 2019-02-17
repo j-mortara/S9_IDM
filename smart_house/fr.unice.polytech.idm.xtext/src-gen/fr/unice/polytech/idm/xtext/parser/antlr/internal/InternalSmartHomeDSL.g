@@ -367,22 +367,55 @@ ruleSensorType returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getSensorTypeAccess().getSensorTypeAction_0(),
-					$current);
-			}
-		)
+		{
+			newCompositeNode(grammarAccess.getSensorTypeAccess().getAnalogSensorTypeParserRuleCall_0());
+		}
+		this_AnalogSensorType_0=ruleAnalogSensorType
+		{
+			$current = $this_AnalogSensorType_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getSensorTypeAccess().getBooleanSensorTypeParserRuleCall_1());
+		}
+		this_BooleanSensorType_1=ruleBooleanSensorType
+		{
+			$current = $this_BooleanSensorType_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleAnalogSensorType
+entryRuleAnalogSensorType returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAnalogSensorTypeRule()); }
+	iv_ruleAnalogSensorType=ruleAnalogSensorType
+	{ $current=$iv_ruleAnalogSensorType.current; }
+	EOF;
+
+// Rule AnalogSensorType
+ruleAnalogSensorType returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='analog'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getAnalogSensorTypeAccess().getAnalogKeyword_0());
+		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSensorTypeAccess().getNameEStringParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getAnalogSensorTypeAccess().getNameEStringParserRuleCall_1_0());
 				}
 				lv_name_1_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSensorTypeRule());
+						$current = createModelElementForParent(grammarAccess.getAnalogSensorTypeRule());
 					}
 					set(
 						$current,
@@ -392,7 +425,49 @@ ruleSensorType returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)?
+		)
+	)
+;
+
+// Entry rule entryRuleBooleanSensorType
+entryRuleBooleanSensorType returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBooleanSensorTypeRule()); }
+	iv_ruleBooleanSensorType=ruleBooleanSensorType
+	{ $current=$iv_ruleBooleanSensorType.current; }
+	EOF;
+
+// Rule BooleanSensorType
+ruleBooleanSensorType returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='boolean'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getBooleanSensorTypeAccess().getBooleanKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getBooleanSensorTypeAccess().getNameEStringParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBooleanSensorTypeRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"fr.unice.polytech.idm.xtext.SmartHomeDSL.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
@@ -446,19 +521,55 @@ ruleSensor returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Sensor'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getSensorAccess().getSensorKeyword_0());
+			newCompositeNode(grammarAccess.getSensorAccess().getIntegerSensorParserRuleCall_0());
+		}
+		this_IntegerSensor_0=ruleIntegerSensor
+		{
+			$current = $this_IntegerSensor_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getSensorAccess().getBooleanSensorParserRuleCall_1());
+		}
+		this_BooleanSensor_1=ruleBooleanSensor
+		{
+			$current = $this_BooleanSensor_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleIntegerSensor
+entryRuleIntegerSensor returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getIntegerSensorRule()); }
+	iv_ruleIntegerSensor=ruleIntegerSensor
+	{ $current=$iv_ruleIntegerSensor.current; }
+	EOF;
+
+// Rule IntegerSensor
+ruleIntegerSensor returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='IntegerSensor'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getIntegerSensorAccess().getIntegerSensorKeyword_0());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSensorAccess().getNameEStringParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getIntegerSensorAccess().getNameEStringParserRuleCall_1_0());
 				}
 				lv_name_1_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSensorRule());
+						$current = createModelElementForParent(grammarAccess.getIntegerSensorRule());
 					}
 					set(
 						$current,
@@ -473,11 +584,11 @@ ruleSensor returns [EObject current=null]
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSensorRule());
+						$current = createModelElement(grammarAccess.getIntegerSensorRule());
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getSensorAccess().getSensorTypeSensorTypeCrossReference_2_0());
+					newCompositeNode(grammarAccess.getIntegerSensorAccess().getSensorTypeAnalogSensorTypeCrossReference_2_0());
 				}
 				ruleEString
 				{
@@ -487,17 +598,17 @@ ruleSensor returns [EObject current=null]
 		)
 		otherlv_3='('
 		{
-			newLeafNode(otherlv_3, grammarAccess.getSensorAccess().getLeftParenthesisKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getIntegerSensorAccess().getLeftParenthesisKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSensorAccess().getDataFileEStringParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getIntegerSensorAccess().getDataFileEStringParserRuleCall_4_0());
 				}
 				lv_dataFile_4_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSensorRule());
+						$current = createModelElementForParent(grammarAccess.getIntegerSensorRule());
 					}
 					set(
 						$current,
@@ -510,7 +621,92 @@ ruleSensor returns [EObject current=null]
 		)
 		otherlv_5=')'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getSensorAccess().getRightParenthesisKeyword_5());
+			newLeafNode(otherlv_5, grammarAccess.getIntegerSensorAccess().getRightParenthesisKeyword_5());
+		}
+	)
+;
+
+// Entry rule entryRuleBooleanSensor
+entryRuleBooleanSensor returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBooleanSensorRule()); }
+	iv_ruleBooleanSensor=ruleBooleanSensor
+	{ $current=$iv_ruleBooleanSensor.current; }
+	EOF;
+
+// Rule BooleanSensor
+ruleBooleanSensor returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='BooleanSensor'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getBooleanSensorAccess().getBooleanSensorKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getBooleanSensorAccess().getNameEStringParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBooleanSensorRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"fr.unice.polytech.idm.xtext.SmartHomeDSL.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBooleanSensorRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getBooleanSensorAccess().getSensorTypeBooleanSensorTypeCrossReference_2_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3='('
+		{
+			newLeafNode(otherlv_3, grammarAccess.getBooleanSensorAccess().getLeftParenthesisKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getBooleanSensorAccess().getDataFileEStringParserRuleCall_4_0());
+				}
+				lv_dataFile_4_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBooleanSensorRule());
+					}
+					set(
+						$current,
+						"dataFile",
+						lv_dataFile_4_0,
+						"fr.unice.polytech.idm.xtext.SmartHomeDSL.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_5=')'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getBooleanSensorAccess().getRightParenthesisKeyword_5());
 		}
 	)
 ;
@@ -644,15 +840,51 @@ ruleCondition returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		{
+			newCompositeNode(grammarAccess.getConditionAccess().getIntegerConditionParserRuleCall_0());
+		}
+		this_IntegerCondition_0=ruleIntegerCondition
+		{
+			$current = $this_IntegerCondition_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getConditionAccess().getBooleanConditionParserRuleCall_1());
+		}
+		this_BooleanCondition_1=ruleBooleanCondition
+		{
+			$current = $this_BooleanCondition_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleIntegerCondition
+entryRuleIntegerCondition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getIntegerConditionRule()); }
+	iv_ruleIntegerCondition=ruleIntegerCondition
+	{ $current=$iv_ruleIntegerCondition.current; }
+	EOF;
+
+// Rule IntegerCondition
+ruleIntegerCondition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
 		(
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getConditionRule());
+						$current = createModelElement(grammarAccess.getIntegerConditionRule());
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getConditionAccess().getSensorSensorCrossReference_0_0());
+					newCompositeNode(grammarAccess.getIntegerConditionAccess().getSensorIntegerSensorCrossReference_0_0());
 				}
 				ruleEString
 				{
@@ -663,18 +895,18 @@ ruleCondition returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getConditionAccess().getOperatorOperatorEnumRuleCall_1_0());
+					newCompositeNode(grammarAccess.getIntegerConditionAccess().getOperatorIntegerOperatorEnumRuleCall_1_0());
 				}
-				lv_operator_1_0=ruleOperator
+				lv_operator_1_0=ruleIntegerOperator
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConditionRule());
+						$current = createModelElementForParent(grammarAccess.getIntegerConditionRule());
 					}
 					set(
 						$current,
 						"operator",
 						lv_operator_1_0,
-						"fr.unice.polytech.idm.xtext.SmartHomeDSL.Operator");
+						"fr.unice.polytech.idm.xtext.SmartHomeDSL.IntegerOperator");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -682,18 +914,91 @@ ruleCondition returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getConditionAccess().getOperandEIntParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getIntegerConditionAccess().getOperandEIntParserRuleCall_2_0());
 				}
 				lv_operand_2_0=ruleEInt
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConditionRule());
+						$current = createModelElementForParent(grammarAccess.getIntegerConditionRule());
 					}
 					set(
 						$current,
 						"operand",
 						lv_operand_2_0,
 						"fr.unice.polytech.idm.xtext.SmartHomeDSL.EInt");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleBooleanCondition
+entryRuleBooleanCondition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBooleanConditionRule()); }
+	iv_ruleBooleanCondition=ruleBooleanCondition
+	{ $current=$iv_ruleBooleanCondition.current; }
+	EOF;
+
+// Rule BooleanCondition
+ruleBooleanCondition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBooleanConditionRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getBooleanConditionAccess().getSensorBooleanSensorCrossReference_0_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getBooleanConditionAccess().getOperatorBooleanOperatorEnumRuleCall_1_0());
+				}
+				lv_operator_1_0=ruleBooleanOperator
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBooleanConditionRule());
+					}
+					set(
+						$current,
+						"operator",
+						lv_operator_1_0,
+						"fr.unice.polytech.idm.xtext.SmartHomeDSL.BooleanOperator");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getBooleanConditionAccess().getOperandEBooleanParserRuleCall_2_0());
+				}
+				lv_operand_2_0=ruleEBoolean
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBooleanConditionRule());
+					}
+					set(
+						$current,
+						"operand",
+						lv_operand_2_0,
+						"fr.unice.polytech.idm.xtext.SmartHomeDSL.EBoolean");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -723,6 +1028,36 @@ ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 	{
 		newLeafNode(this_INT_0, grammarAccess.getEIntAccess().getINTTerminalRuleCall());
 	}
+;
+
+// Entry rule entryRuleEBoolean
+entryRuleEBoolean returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getEBooleanRule()); }
+	iv_ruleEBoolean=ruleEBoolean
+	{ $current=$iv_ruleEBoolean.current.getText(); }
+	EOF;
+
+// Rule EBoolean
+ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		kw='true'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getEBooleanAccess().getTrueKeyword_0());
+		}
+		    |
+		kw='false'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getEBooleanAccess().getFalseKeyword_1());
+		}
+	)
 ;
 
 // Entry rule entryRuleDuration
@@ -818,8 +1153,8 @@ ruleEvent returns [EObject current=null]
 	)
 ;
 
-// Rule Operator
-ruleOperator returns [Enumerator current=null]
+// Rule IntegerOperator
+ruleIntegerOperator returns [Enumerator current=null]
 @init {
 	enterRule();
 }
@@ -830,24 +1165,51 @@ ruleOperator returns [Enumerator current=null]
 		(
 			enumLiteral_0='='
 			{
-				$current = grammarAccess.getOperatorAccess().getEQUALSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getOperatorAccess().getEQUALSEnumLiteralDeclaration_0());
+				$current = grammarAccess.getIntegerOperatorAccess().getEQUALSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getIntegerOperatorAccess().getEQUALSEnumLiteralDeclaration_0());
 			}
 		)
 		    |
 		(
 			enumLiteral_1='<'
 			{
-				$current = grammarAccess.getOperatorAccess().getINFERIOREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getOperatorAccess().getINFERIOREnumLiteralDeclaration_1());
+				$current = grammarAccess.getIntegerOperatorAccess().getINFERIOREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getIntegerOperatorAccess().getINFERIOREnumLiteralDeclaration_1());
 			}
 		)
 		    |
 		(
 			enumLiteral_2='>'
 			{
-				$current = grammarAccess.getOperatorAccess().getSUPERIOREnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_2, grammarAccess.getOperatorAccess().getSUPERIOREnumLiteralDeclaration_2());
+				$current = grammarAccess.getIntegerOperatorAccess().getSUPERIOREnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getIntegerOperatorAccess().getSUPERIOREnumLiteralDeclaration_2());
+			}
+		)
+	)
+;
+
+// Rule BooleanOperator
+ruleBooleanOperator returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='is'
+			{
+				$current = grammarAccess.getBooleanOperatorAccess().getISEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getBooleanOperatorAccess().getISEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='isnot'
+			{
+				$current = grammarAccess.getBooleanOperatorAccess().getIS_NOTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getBooleanOperatorAccess().getIS_NOTEnumLiteralDeclaration_1());
 			}
 		)
 	)

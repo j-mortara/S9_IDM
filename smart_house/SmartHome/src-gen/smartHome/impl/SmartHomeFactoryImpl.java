@@ -57,18 +57,26 @@ public class SmartHomeFactoryImpl extends EFactoryImpl implements SmartHomeFacto
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case SmartHomePackage.SENSOR:
-			return createSensor();
+		case SmartHomePackage.INTEGER_SENSOR:
+			return createIntegerSensor();
+		case SmartHomePackage.BOOLEAN_SENSOR:
+			return createBooleanSensor();
 		case SmartHomePackage.LOCATION:
 			return createLocation();
 		case SmartHomePackage.SENSOR_TYPE:
 			return createSensorType();
+		case SmartHomePackage.ANALOG_SENSOR_TYPE:
+			return createAnalogSensorType();
+		case SmartHomePackage.BOOLEAN_SENSOR_TYPE:
+			return createBooleanSensorType();
 		case SmartHomePackage.SMART_HOME:
 			return createSmartHome();
 		case SmartHomePackage.RULE:
 			return createRule();
-		case SmartHomePackage.CONDITION:
-			return createCondition();
+		case SmartHomePackage.BOOLEAN_CONDITION:
+			return createBooleanCondition();
+		case SmartHomePackage.INTEGER_CONDITION:
+			return createIntegerCondition();
 		case SmartHomePackage.DURATION:
 			return createDuration();
 		case SmartHomePackage.EVENT:
@@ -88,8 +96,10 @@ public class SmartHomeFactoryImpl extends EFactoryImpl implements SmartHomeFacto
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-		case SmartHomePackage.OPERATOR:
-			return createOperatorFromString(eDataType, initialValue);
+		case SmartHomePackage.INTEGER_OPERATOR:
+			return createIntegerOperatorFromString(eDataType, initialValue);
+		case SmartHomePackage.BOOLEAN_OPERATOR:
+			return createBooleanOperatorFromString(eDataType, initialValue);
 		case SmartHomePackage.DURATION_UNIT:
 			return createDurationUnitFromString(eDataType, initialValue);
 		default:
@@ -105,8 +115,10 @@ public class SmartHomeFactoryImpl extends EFactoryImpl implements SmartHomeFacto
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-		case SmartHomePackage.OPERATOR:
-			return convertOperatorToString(eDataType, instanceValue);
+		case SmartHomePackage.INTEGER_OPERATOR:
+			return convertIntegerOperatorToString(eDataType, instanceValue);
+		case SmartHomePackage.BOOLEAN_OPERATOR:
+			return convertBooleanOperatorToString(eDataType, instanceValue);
 		case SmartHomePackage.DURATION_UNIT:
 			return convertDurationUnitToString(eDataType, instanceValue);
 		default:
@@ -119,9 +131,19 @@ public class SmartHomeFactoryImpl extends EFactoryImpl implements SmartHomeFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Sensor createSensor() {
-		SensorImpl sensor = new SensorImpl();
-		return sensor;
+	public IntegerSensor createIntegerSensor() {
+		IntegerSensorImpl integerSensor = new IntegerSensorImpl();
+		return integerSensor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BooleanSensor createBooleanSensor() {
+		BooleanSensorImpl booleanSensor = new BooleanSensorImpl();
+		return booleanSensor;
 	}
 
 	/**
@@ -149,6 +171,26 @@ public class SmartHomeFactoryImpl extends EFactoryImpl implements SmartHomeFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public AnalogSensorType createAnalogSensorType() {
+		AnalogSensorTypeImpl analogSensorType = new AnalogSensorTypeImpl();
+		return analogSensorType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BooleanSensorType createBooleanSensorType() {
+		BooleanSensorTypeImpl booleanSensorType = new BooleanSensorTypeImpl();
+		return booleanSensorType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SmartHome createSmartHome() {
 		SmartHomeImpl smartHome = new SmartHomeImpl();
 		return smartHome;
@@ -169,9 +211,19 @@ public class SmartHomeFactoryImpl extends EFactoryImpl implements SmartHomeFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Condition createCondition() {
-		ConditionImpl condition = new ConditionImpl();
-		return condition;
+	public BooleanCondition createBooleanCondition() {
+		BooleanConditionImpl booleanCondition = new BooleanConditionImpl();
+		return booleanCondition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IntegerCondition createIntegerCondition() {
+		IntegerConditionImpl integerCondition = new IntegerConditionImpl();
+		return integerCondition;
 	}
 
 	/**
@@ -209,8 +261,8 @@ public class SmartHomeFactoryImpl extends EFactoryImpl implements SmartHomeFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Operator createOperatorFromString(EDataType eDataType, String initialValue) {
-		Operator result = Operator.get(initialValue);
+	public IntegerOperator createIntegerOperatorFromString(EDataType eDataType, String initialValue) {
+		IntegerOperator result = IntegerOperator.get(initialValue);
 		if (result == null)
 			throw new IllegalArgumentException(
 					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -222,7 +274,29 @@ public class SmartHomeFactoryImpl extends EFactoryImpl implements SmartHomeFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertOperatorToString(EDataType eDataType, Object instanceValue) {
+	public String convertIntegerOperatorToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BooleanOperator createBooleanOperatorFromString(EDataType eDataType, String initialValue) {
+		BooleanOperator result = BooleanOperator.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertBooleanOperatorToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

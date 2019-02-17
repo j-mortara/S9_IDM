@@ -19,10 +19,16 @@ import fr.inria.diverse.k3.al.annotationprocessor.Step
 import smartHome.Rule
 import smartHome.Condition
 import smartHome.Operator
+import smartHome.BooleanCondition
+import smartHome.IntegerCondition
+import smartHome.BooleanOperator
+import smartHome.IntegerOperator
+import smartHome.IntegerSensor
+import smartHome.BooleanSensor
 
 @Aspect(className=Sensor)
-class SensorAspect {
-	var String currentSt;
+abstract class SensorAspect {
+	var protected String currentSt;
 	var String nextSt;
 	var BufferedReader br;
 	
@@ -32,7 +38,7 @@ class SensorAspect {
 		_self.br = new BufferedReader(new FileReader(new File(_self.dataFile)));
 		_self.currentSt = _self.br.readLine();
 		_self.nextSt = _self.br.readLine();
-		_self.value = Integer.parseInt(_self.currentSt.split(" ").get(1));
+		_self.setSensorValue();
 	}
 	@Step
 	def void sensorStep(int currentStep){
@@ -40,11 +46,34 @@ class SensorAspect {
 			if(Integer.parseInt(_self.nextSt.split(" ").get(0)).equals(currentStep)){		
 				_self.currentSt = _self.nextSt;				
 				_self.nextSt = _self.br.readLine();
-				_self.value = Integer.parseInt(_self.currentSt.split(" ").get(1));
+				_self.setSensorValue();
+				
 			}
 		}
 	}
+	
+	def abstract void setSensorValue(); 
+	def abstract Object getSensorValue();
+}
 
+@Aspect(className=IntegerSensor)
+class IntegerSensorAspect extends SensorAspect {
+	def void setSensorValue(){
+		_self.value = Integer.parseInt(_self.currentSt.split(" ").get(1));
+	}
+	def Object getSensorValue(){
+		return _self.value;
+	}
+}
+
+@Aspect(className=BooleanSensor)
+class BooleanSensorAspect extends SensorAspect {
+	def void setSensorValue(){
+		_self.value = Boolean.parseBoolean(_self.currentSt.split(" ").get(1));
+	}
+	def Object getSensorValue(){
+		return _self.value;
+	}
 }
 
 @Aspect(className=Location) 
@@ -89,19 +118,35 @@ class RuleAspect {
 }
 
 @Aspect(className=Condition)
-class ConditionAspect {
+abstract class ConditionAspect {
+	@Step
+	abstract def boolean evaluate();
+}
+
+@Aspect(className=BooleanCondition)
+class BooleanConditionAspect extends ConditionAspect {
 	@Step
 	def boolean evaluate() {
-		if(_self.operator.equals(Operator.INFERIOR)){
+		if(_self.operator.equals(BooleanOperator.IS)){
+			return _self.sensor.value == _self.operand;
+		} else {
+			return _self.sensor.value != _self.operand;
+		}
+	}
+}
+@Aspect(className=IntegerCondition)
+class IntegerConditionAspect extends ConditionAspect {
+	@Step
+	def boolean evaluate() {
+		if(_self.operator.equals(IntegerOperator.INFERIOR)){
 			return _self.sensor.value < _self.operand;
-		} else if(_self.operator.equals(Operator.SUPERIOR)){
+		} else if(_self.operator.equals(IntegerOperator.SUPERIOR)){
 			return _self.sensor.value > _self.operand;
 		} else {
 			return _self.sensor.value == _self.operand;
 		}
 	}
 }
-
 @Aspect(className=SmartHome)
 class SmartHomeAspect {
 	
@@ -127,7 +172,7 @@ class SmartHomeAspect {
 			println("===== Time : " + _self.time + " =====");
 			for(Location location : _self.locations){
 				for(Sensor sensor : location.sensors){
-					println("Sensor " + sensor.name + " value : " + sensor.value);
+					println("Sensor " + sensor.name + " value : " + sensor.getSensorValue());
 					sensor.sensorStep(_self.time);
 				}				
 			}

@@ -32,7 +32,7 @@ public interface SensorType extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see smartHome.SmartHomePackage#getSensorType_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();

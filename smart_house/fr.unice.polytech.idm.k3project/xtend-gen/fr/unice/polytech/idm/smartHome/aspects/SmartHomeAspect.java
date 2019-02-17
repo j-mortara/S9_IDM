@@ -79,8 +79,8 @@ public class SmartHomeAspect {
               String _name = sensor.getName();
               String _plus_2 = ("Sensor " + _name);
               String _plus_3 = (_plus_2 + " value : ");
-              int _value = sensor.getValue();
-              String _plus_4 = (_plus_3 + Integer.valueOf(_value));
+              Object _sensorValue = SensorAspect.getSensorValue(sensor);
+              String _plus_4 = (_plus_3 + _sensorValue);
               InputOutput.<String>println(_plus_4);
               SensorAspect.sensorStep(sensor, SmartHomeAspect.time(_self));
             }

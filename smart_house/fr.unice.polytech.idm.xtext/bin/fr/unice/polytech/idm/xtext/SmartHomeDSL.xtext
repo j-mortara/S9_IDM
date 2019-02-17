@@ -18,41 +18,61 @@ Location returns Location:
     'Location'
     name=EString
     '{'
+    
     ( sensors+=Sensor ( "," sensors+=Sensor)* )?
     '}';
 
 SensorType returns SensorType:
-    {SensorType}
-    (name=EString)?;
+    AnalogSensorType|BooleanSensorType;
+
+AnalogSensorType returns AnalogSensorType:
+    "analog" name=EString;
+
+BooleanSensorType returns BooleanSensorType:
+    "boolean" name=EString;
 
 EString returns ecore::EString:
     STRING | ID;
 
-Sensor returns Sensor:
-    'Sensor' name=EString sensorType=[SensorType|EString] '(' dataFile=EString ')';
-        
+Sensor :
+	IntegerSensor | BooleanSensor;
+
+IntegerSensor returns IntegerSensor:
+	 'IntegerSensor' name=EString sensorType=[AnalogSensorType|EString] '(' dataFile=EString ')';
+
+BooleanSensor returns BooleanSensor:
+	 'BooleanSensor' name=EString sensorType=[BooleanSensorType|EString] '(' dataFile=EString ')';
+       
 Rule returns Rule:
 	'if' conditions+=Condition ( 'and' conditions+=Condition)* 'for' duration=Duration 'then' event=Event;
 
 Condition returns Condition:
-	sensor=[Sensor|EString] operator=Operator operand=EInt;
+	IntegerCondition|BooleanCondition;
+
+IntegerCondition returns IntegerCondition:
+	sensor=[IntegerSensor|EString] operator=IntegerOperator operand=EInt;
+
+BooleanCondition returns BooleanCondition:
+	sensor=[BooleanSensor|EString] operator=BooleanOperator operand=EBoolean;
 
 EInt returns ecore::EInt: 
 	INT;
+	
+EBoolean returns ecore::EBoolean:
+	'true'|'false';
 
-enum Operator: 
-	EQUALS='='|INFERIOR='<'|SUPERIOR='>'
-;
+enum IntegerOperator: 
+	EQUALS='='|INFERIOR='<'|SUPERIOR='>';
+
+enum BooleanOperator: 
+	IS="is"|IS_NOT="isnot";
 
 enum DurationUnit:
-	MINUTE='min'|SECOND='s'
-;
+	MINUTE='min'|SECOND='s';
 
 Duration returns Duration:
-	 value=EInt unit=DurationUnit
-;
+	 value=EInt unit=DurationUnit;
 
 Event returns Event:
-	description=EString 
-;
+	description=EString;
 

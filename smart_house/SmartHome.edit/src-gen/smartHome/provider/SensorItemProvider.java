@@ -56,7 +56,6 @@ public class SensorItemProvider extends ItemProviderAdapter implements IEditingD
 			addSensorTypePropertyDescriptor(object);
 			addDataFilePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
-			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -108,21 +107,6 @@ public class SensorItemProvider extends ItemProviderAdapter implements IEditingD
 	}
 
 	/**
-	 * This adds a property descriptor for the Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Sensor_value_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Sensor_value_feature", "_UI_Sensor_type"),
-						SmartHomePackage.Literals.SENSOR__VALUE, true, false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
-	}
-
-	/**
 	 * This returns Sensor.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -170,7 +154,6 @@ public class SensorItemProvider extends ItemProviderAdapter implements IEditingD
 		switch (notification.getFeatureID(Sensor.class)) {
 		case SmartHomePackage.SENSOR__DATA_FILE:
 		case SmartHomePackage.SENSOR__NAME:
-		case SmartHomePackage.SENSOR__VALUE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

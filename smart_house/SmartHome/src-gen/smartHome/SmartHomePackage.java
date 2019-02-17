@@ -95,22 +95,13 @@ public interface SmartHomePackage extends EPackage {
 	int SENSOR__NAME = 2;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SENSOR__VALUE = 3;
-
-	/**
 	 * The number of structural features of the '<em>Sensor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_FEATURE_COUNT = 4;
+	int SENSOR_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Sensor</em>' class.
@@ -122,6 +113,134 @@ public interface SmartHomePackage extends EPackage {
 	int SENSOR_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link smartHome.impl.IntegerSensorImpl <em>Integer Sensor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see smartHome.impl.IntegerSensorImpl
+	 * @see smartHome.impl.SmartHomePackageImpl#getIntegerSensor()
+	 * @generated
+	 */
+	int INTEGER_SENSOR = 1;
+
+	/**
+	 * The feature id for the '<em><b>Sensor Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_SENSOR__SENSOR_TYPE = SENSOR__SENSOR_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Data File</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_SENSOR__DATA_FILE = SENSOR__DATA_FILE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_SENSOR__NAME = SENSOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_SENSOR__VALUE = SENSOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Integer Sensor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_SENSOR_FEATURE_COUNT = SENSOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Integer Sensor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_SENSOR_OPERATION_COUNT = SENSOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link smartHome.impl.BooleanSensorImpl <em>Boolean Sensor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see smartHome.impl.BooleanSensorImpl
+	 * @see smartHome.impl.SmartHomePackageImpl#getBooleanSensor()
+	 * @generated
+	 */
+	int BOOLEAN_SENSOR = 2;
+
+	/**
+	 * The feature id for the '<em><b>Sensor Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_SENSOR__SENSOR_TYPE = SENSOR__SENSOR_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Data File</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_SENSOR__DATA_FILE = SENSOR__DATA_FILE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_SENSOR__NAME = SENSOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_SENSOR__VALUE = SENSOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Boolean Sensor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_SENSOR_FEATURE_COUNT = SENSOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Boolean Sensor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_SENSOR_OPERATION_COUNT = SENSOR_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link smartHome.impl.LocationImpl <em>Location</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,7 +248,7 @@ public interface SmartHomePackage extends EPackage {
 	 * @see smartHome.impl.SmartHomePackageImpl#getLocation()
 	 * @generated
 	 */
-	int LOCATION = 1;
+	int LOCATION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -175,7 +294,7 @@ public interface SmartHomePackage extends EPackage {
 	 * @see smartHome.impl.SmartHomePackageImpl#getSensorType()
 	 * @generated
 	 */
-	int SENSOR_TYPE = 2;
+	int SENSOR_TYPE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -205,6 +324,80 @@ public interface SmartHomePackage extends EPackage {
 	int SENSOR_TYPE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link smartHome.impl.AnalogSensorTypeImpl <em>Analog Sensor Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see smartHome.impl.AnalogSensorTypeImpl
+	 * @see smartHome.impl.SmartHomePackageImpl#getAnalogSensorType()
+	 * @generated
+	 */
+	int ANALOG_SENSOR_TYPE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALOG_SENSOR_TYPE__NAME = SENSOR_TYPE__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Analog Sensor Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALOG_SENSOR_TYPE_FEATURE_COUNT = SENSOR_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Analog Sensor Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALOG_SENSOR_TYPE_OPERATION_COUNT = SENSOR_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link smartHome.impl.BooleanSensorTypeImpl <em>Boolean Sensor Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see smartHome.impl.BooleanSensorTypeImpl
+	 * @see smartHome.impl.SmartHomePackageImpl#getBooleanSensorType()
+	 * @generated
+	 */
+	int BOOLEAN_SENSOR_TYPE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_SENSOR_TYPE__NAME = SENSOR_TYPE__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Boolean Sensor Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_SENSOR_TYPE_FEATURE_COUNT = SENSOR_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Boolean Sensor Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_SENSOR_TYPE_OPERATION_COUNT = SENSOR_TYPE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link smartHome.impl.SmartHomeImpl <em>Smart Home</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -212,7 +405,7 @@ public interface SmartHomePackage extends EPackage {
 	 * @see smartHome.impl.SmartHomePackageImpl#getSmartHome()
 	 * @generated
 	 */
-	int SMART_HOME = 3;
+	int SMART_HOME = 7;
 
 	/**
 	 * The feature id for the '<em><b>Locations</b></em>' containment reference list.
@@ -267,7 +460,7 @@ public interface SmartHomePackage extends EPackage {
 	 * @see smartHome.impl.SmartHomePackageImpl#getRule()
 	 * @generated
 	 */
-	int RULE = 4;
+	int RULE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
@@ -322,34 +515,7 @@ public interface SmartHomePackage extends EPackage {
 	 * @see smartHome.impl.SmartHomePackageImpl#getCondition()
 	 * @generated
 	 */
-	int CONDITION = 5;
-
-	/**
-	 * The feature id for the '<em><b>Sensor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION__SENSOR = 0;
-
-	/**
-	 * The feature id for the '<em><b>Operand</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION__OPERAND = 1;
-
-	/**
-	 * The feature id for the '<em><b>Operator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION__OPERATOR = 2;
+	int CONDITION = 9;
 
 	/**
 	 * The number of structural features of the '<em>Condition</em>' class.
@@ -358,7 +524,7 @@ public interface SmartHomePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION_FEATURE_COUNT = 3;
+	int CONDITION_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of operations of the '<em>Condition</em>' class.
@@ -370,6 +536,116 @@ public interface SmartHomePackage extends EPackage {
 	int CONDITION_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link smartHome.impl.BooleanConditionImpl <em>Boolean Condition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see smartHome.impl.BooleanConditionImpl
+	 * @see smartHome.impl.SmartHomePackageImpl#getBooleanCondition()
+	 * @generated
+	 */
+	int BOOLEAN_CONDITION = 10;
+
+	/**
+	 * The feature id for the '<em><b>Sensor</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_CONDITION__SENSOR = CONDITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Operand</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_CONDITION__OPERAND = CONDITION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Operator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_CONDITION__OPERATOR = CONDITION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Boolean Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_CONDITION_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Boolean Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_CONDITION_OPERATION_COUNT = CONDITION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link smartHome.impl.IntegerConditionImpl <em>Integer Condition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see smartHome.impl.IntegerConditionImpl
+	 * @see smartHome.impl.SmartHomePackageImpl#getIntegerCondition()
+	 * @generated
+	 */
+	int INTEGER_CONDITION = 11;
+
+	/**
+	 * The feature id for the '<em><b>Sensor</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_CONDITION__SENSOR = CONDITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Operand</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_CONDITION__OPERAND = CONDITION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Operator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_CONDITION__OPERATOR = CONDITION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Integer Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_CONDITION_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Integer Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_CONDITION_OPERATION_COUNT = CONDITION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link smartHome.impl.DurationImpl <em>Duration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -377,7 +653,7 @@ public interface SmartHomePackage extends EPackage {
 	 * @see smartHome.impl.SmartHomePackageImpl#getDuration()
 	 * @generated
 	 */
-	int DURATION = 6;
+	int DURATION = 12;
 
 	/**
 	 * The feature id for the '<em><b>Unit</b></em>' attribute.
@@ -423,7 +699,7 @@ public interface SmartHomePackage extends EPackage {
 	 * @see smartHome.impl.SmartHomePackageImpl#getEvent()
 	 * @generated
 	 */
-	int EVENT = 7;
+	int EVENT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -460,7 +736,7 @@ public interface SmartHomePackage extends EPackage {
 	 * @see smartHome.impl.SmartHomePackageImpl#getSensorValue()
 	 * @generated
 	 */
-	int SENSOR_VALUE = 8;
+	int SENSOR_VALUE = 14;
 
 	/**
 	 * The number of structural features of the '<em>Sensor Value</em>' class.
@@ -481,14 +757,24 @@ public interface SmartHomePackage extends EPackage {
 	int SENSOR_VALUE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link smartHome.Operator <em>Operator</em>}' enum.
+	 * The meta object id for the '{@link smartHome.IntegerOperator <em>Integer Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see smartHome.Operator
-	 * @see smartHome.impl.SmartHomePackageImpl#getOperator()
+	 * @see smartHome.IntegerOperator
+	 * @see smartHome.impl.SmartHomePackageImpl#getIntegerOperator()
 	 * @generated
 	 */
-	int OPERATOR = 9;
+	int INTEGER_OPERATOR = 15;
+
+	/**
+	 * The meta object id for the '{@link smartHome.BooleanOperator <em>Boolean Operator</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see smartHome.BooleanOperator
+	 * @see smartHome.impl.SmartHomePackageImpl#getBooleanOperator()
+	 * @generated
+	 */
+	int BOOLEAN_OPERATOR = 16;
 
 	/**
 	 * The meta object id for the '{@link smartHome.DurationUnit <em>Duration Unit</em>}' enum.
@@ -498,7 +784,7 @@ public interface SmartHomePackage extends EPackage {
 	 * @see smartHome.impl.SmartHomePackageImpl#getDurationUnit()
 	 * @generated
 	 */
-	int DURATION_UNIT = 10;
+	int DURATION_UNIT = 17;
 
 	/**
 	 * Returns the meta object for class '{@link smartHome.Sensor <em>Sensor</em>}'.
@@ -544,15 +830,46 @@ public interface SmartHomePackage extends EPackage {
 	EAttribute getSensor_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link smartHome.Sensor#getValue <em>Value</em>}'.
+	 * Returns the meta object for class '{@link smartHome.IntegerSensor <em>Integer Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Integer Sensor</em>'.
+	 * @see smartHome.IntegerSensor
+	 * @generated
+	 */
+	EClass getIntegerSensor();
+
+	/**
+	 * Returns the meta object for the attribute '{@link smartHome.IntegerSensor#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see smartHome.Sensor#getValue()
-	 * @see #getSensor()
+	 * @see smartHome.IntegerSensor#getValue()
+	 * @see #getIntegerSensor()
 	 * @generated
 	 */
-	EAttribute getSensor_Value();
+	EAttribute getIntegerSensor_Value();
+
+	/**
+	 * Returns the meta object for class '{@link smartHome.BooleanSensor <em>Boolean Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Boolean Sensor</em>'.
+	 * @see smartHome.BooleanSensor
+	 * @generated
+	 */
+	EClass getBooleanSensor();
+
+	/**
+	 * Returns the meta object for the attribute '{@link smartHome.BooleanSensor#isValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see smartHome.BooleanSensor#isValue()
+	 * @see #getBooleanSensor()
+	 * @generated
+	 */
+	EAttribute getBooleanSensor_Value();
 
 	/**
 	 * Returns the meta object for class '{@link smartHome.Location <em>Location</em>}'.
@@ -606,6 +923,26 @@ public interface SmartHomePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSensorType_Name();
+
+	/**
+	 * Returns the meta object for class '{@link smartHome.AnalogSensorType <em>Analog Sensor Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Analog Sensor Type</em>'.
+	 * @see smartHome.AnalogSensorType
+	 * @generated
+	 */
+	EClass getAnalogSensorType();
+
+	/**
+	 * Returns the meta object for class '{@link smartHome.BooleanSensorType <em>Boolean Sensor Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Boolean Sensor Type</em>'.
+	 * @see smartHome.BooleanSensorType
+	 * @generated
+	 */
+	EClass getBooleanSensorType();
 
 	/**
 	 * Returns the meta object for class '{@link smartHome.SmartHome <em>Smart Home</em>}'.
@@ -704,37 +1041,90 @@ public interface SmartHomePackage extends EPackage {
 	EClass getCondition();
 
 	/**
-	 * Returns the meta object for the reference '{@link smartHome.Condition#getSensor <em>Sensor</em>}'.
+	 * Returns the meta object for class '{@link smartHome.BooleanCondition <em>Boolean Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Boolean Condition</em>'.
+	 * @see smartHome.BooleanCondition
+	 * @generated
+	 */
+	EClass getBooleanCondition();
+
+	/**
+	 * Returns the meta object for the reference '{@link smartHome.BooleanCondition#getSensor <em>Sensor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Sensor</em>'.
-	 * @see smartHome.Condition#getSensor()
-	 * @see #getCondition()
+	 * @see smartHome.BooleanCondition#getSensor()
+	 * @see #getBooleanCondition()
 	 * @generated
 	 */
-	EReference getCondition_Sensor();
+	EReference getBooleanCondition_Sensor();
 
 	/**
-	 * Returns the meta object for the attribute '{@link smartHome.Condition#getOperand <em>Operand</em>}'.
+	 * Returns the meta object for the attribute '{@link smartHome.BooleanCondition#isOperand <em>Operand</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Operand</em>'.
-	 * @see smartHome.Condition#getOperand()
-	 * @see #getCondition()
+	 * @see smartHome.BooleanCondition#isOperand()
+	 * @see #getBooleanCondition()
 	 * @generated
 	 */
-	EAttribute getCondition_Operand();
+	EAttribute getBooleanCondition_Operand();
 
 	/**
-	 * Returns the meta object for the attribute '{@link smartHome.Condition#getOperator <em>Operator</em>}'.
+	 * Returns the meta object for the attribute '{@link smartHome.BooleanCondition#getOperator <em>Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Operator</em>'.
-	 * @see smartHome.Condition#getOperator()
-	 * @see #getCondition()
+	 * @see smartHome.BooleanCondition#getOperator()
+	 * @see #getBooleanCondition()
 	 * @generated
 	 */
-	EAttribute getCondition_Operator();
+	EAttribute getBooleanCondition_Operator();
+
+	/**
+	 * Returns the meta object for class '{@link smartHome.IntegerCondition <em>Integer Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Integer Condition</em>'.
+	 * @see smartHome.IntegerCondition
+	 * @generated
+	 */
+	EClass getIntegerCondition();
+
+	/**
+	 * Returns the meta object for the reference '{@link smartHome.IntegerCondition#getSensor <em>Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Sensor</em>'.
+	 * @see smartHome.IntegerCondition#getSensor()
+	 * @see #getIntegerCondition()
+	 * @generated
+	 */
+	EReference getIntegerCondition_Sensor();
+
+	/**
+	 * Returns the meta object for the attribute '{@link smartHome.IntegerCondition#getOperand <em>Operand</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Operand</em>'.
+	 * @see smartHome.IntegerCondition#getOperand()
+	 * @see #getIntegerCondition()
+	 * @generated
+	 */
+	EAttribute getIntegerCondition_Operand();
+
+	/**
+	 * Returns the meta object for the attribute '{@link smartHome.IntegerCondition#getOperator <em>Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Operator</em>'.
+	 * @see smartHome.IntegerCondition#getOperator()
+	 * @see #getIntegerCondition()
+	 * @generated
+	 */
+	EAttribute getIntegerCondition_Operator();
 
 	/**
 	 * Returns the meta object for class '{@link smartHome.Duration <em>Duration</em>}'.
@@ -800,14 +1190,24 @@ public interface SmartHomePackage extends EPackage {
 	EClass getSensorValue();
 
 	/**
-	 * Returns the meta object for enum '{@link smartHome.Operator <em>Operator</em>}'.
+	 * Returns the meta object for enum '{@link smartHome.IntegerOperator <em>Integer Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Operator</em>'.
-	 * @see smartHome.Operator
+	 * @return the meta object for enum '<em>Integer Operator</em>'.
+	 * @see smartHome.IntegerOperator
 	 * @generated
 	 */
-	EEnum getOperator();
+	EEnum getIntegerOperator();
+
+	/**
+	 * Returns the meta object for enum '{@link smartHome.BooleanOperator <em>Boolean Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Boolean Operator</em>'.
+	 * @see smartHome.BooleanOperator
+	 * @generated
+	 */
+	EEnum getBooleanOperator();
 
 	/**
 	 * Returns the meta object for enum '{@link smartHome.DurationUnit <em>Duration Unit</em>}'.
@@ -877,12 +1277,40 @@ public interface SmartHomePackage extends EPackage {
 		EAttribute SENSOR__NAME = eINSTANCE.getSensor_Name();
 
 		/**
+		 * The meta object literal for the '{@link smartHome.impl.IntegerSensorImpl <em>Integer Sensor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see smartHome.impl.IntegerSensorImpl
+		 * @see smartHome.impl.SmartHomePackageImpl#getIntegerSensor()
+		 * @generated
+		 */
+		EClass INTEGER_SENSOR = eINSTANCE.getIntegerSensor();
+
+		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SENSOR__VALUE = eINSTANCE.getSensor_Value();
+		EAttribute INTEGER_SENSOR__VALUE = eINSTANCE.getIntegerSensor_Value();
+
+		/**
+		 * The meta object literal for the '{@link smartHome.impl.BooleanSensorImpl <em>Boolean Sensor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see smartHome.impl.BooleanSensorImpl
+		 * @see smartHome.impl.SmartHomePackageImpl#getBooleanSensor()
+		 * @generated
+		 */
+		EClass BOOLEAN_SENSOR = eINSTANCE.getBooleanSensor();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BOOLEAN_SENSOR__VALUE = eINSTANCE.getBooleanSensor_Value();
 
 		/**
 		 * The meta object literal for the '{@link smartHome.impl.LocationImpl <em>Location</em>}' class.
@@ -927,6 +1355,26 @@ public interface SmartHomePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SENSOR_TYPE__NAME = eINSTANCE.getSensorType_Name();
+
+		/**
+		 * The meta object literal for the '{@link smartHome.impl.AnalogSensorTypeImpl <em>Analog Sensor Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see smartHome.impl.AnalogSensorTypeImpl
+		 * @see smartHome.impl.SmartHomePackageImpl#getAnalogSensorType()
+		 * @generated
+		 */
+		EClass ANALOG_SENSOR_TYPE = eINSTANCE.getAnalogSensorType();
+
+		/**
+		 * The meta object literal for the '{@link smartHome.impl.BooleanSensorTypeImpl <em>Boolean Sensor Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see smartHome.impl.BooleanSensorTypeImpl
+		 * @see smartHome.impl.SmartHomePackageImpl#getBooleanSensorType()
+		 * @generated
+		 */
+		EClass BOOLEAN_SENSOR_TYPE = eINSTANCE.getBooleanSensorType();
 
 		/**
 		 * The meta object literal for the '{@link smartHome.impl.SmartHomeImpl <em>Smart Home</em>}' class.
@@ -1007,12 +1455,22 @@ public interface SmartHomePackage extends EPackage {
 		EClass CONDITION = eINSTANCE.getCondition();
 
 		/**
+		 * The meta object literal for the '{@link smartHome.impl.BooleanConditionImpl <em>Boolean Condition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see smartHome.impl.BooleanConditionImpl
+		 * @see smartHome.impl.SmartHomePackageImpl#getBooleanCondition()
+		 * @generated
+		 */
+		EClass BOOLEAN_CONDITION = eINSTANCE.getBooleanCondition();
+
+		/**
 		 * The meta object literal for the '<em><b>Sensor</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONDITION__SENSOR = eINSTANCE.getCondition_Sensor();
+		EReference BOOLEAN_CONDITION__SENSOR = eINSTANCE.getBooleanCondition_Sensor();
 
 		/**
 		 * The meta object literal for the '<em><b>Operand</b></em>' attribute feature.
@@ -1020,7 +1478,7 @@ public interface SmartHomePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONDITION__OPERAND = eINSTANCE.getCondition_Operand();
+		EAttribute BOOLEAN_CONDITION__OPERAND = eINSTANCE.getBooleanCondition_Operand();
 
 		/**
 		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
@@ -1028,7 +1486,41 @@ public interface SmartHomePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONDITION__OPERATOR = eINSTANCE.getCondition_Operator();
+		EAttribute BOOLEAN_CONDITION__OPERATOR = eINSTANCE.getBooleanCondition_Operator();
+
+		/**
+		 * The meta object literal for the '{@link smartHome.impl.IntegerConditionImpl <em>Integer Condition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see smartHome.impl.IntegerConditionImpl
+		 * @see smartHome.impl.SmartHomePackageImpl#getIntegerCondition()
+		 * @generated
+		 */
+		EClass INTEGER_CONDITION = eINSTANCE.getIntegerCondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Sensor</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTEGER_CONDITION__SENSOR = eINSTANCE.getIntegerCondition_Sensor();
+
+		/**
+		 * The meta object literal for the '<em><b>Operand</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTEGER_CONDITION__OPERAND = eINSTANCE.getIntegerCondition_Operand();
+
+		/**
+		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTEGER_CONDITION__OPERATOR = eINSTANCE.getIntegerCondition_Operator();
 
 		/**
 		 * The meta object literal for the '{@link smartHome.impl.DurationImpl <em>Duration</em>}' class.
@@ -1085,14 +1577,24 @@ public interface SmartHomePackage extends EPackage {
 		EClass SENSOR_VALUE = eINSTANCE.getSensorValue();
 
 		/**
-		 * The meta object literal for the '{@link smartHome.Operator <em>Operator</em>}' enum.
+		 * The meta object literal for the '{@link smartHome.IntegerOperator <em>Integer Operator</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see smartHome.Operator
-		 * @see smartHome.impl.SmartHomePackageImpl#getOperator()
+		 * @see smartHome.IntegerOperator
+		 * @see smartHome.impl.SmartHomePackageImpl#getIntegerOperator()
 		 * @generated
 		 */
-		EEnum OPERATOR = eINSTANCE.getOperator();
+		EEnum INTEGER_OPERATOR = eINSTANCE.getIntegerOperator();
+
+		/**
+		 * The meta object literal for the '{@link smartHome.BooleanOperator <em>Boolean Operator</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see smartHome.BooleanOperator
+		 * @see smartHome.impl.SmartHomePackageImpl#getBooleanOperator()
+		 * @generated
+		 */
+		EEnum BOOLEAN_OPERATOR = eINSTANCE.getBooleanOperator();
 
 		/**
 		 * The meta object literal for the '{@link smartHome.DurationUnit <em>Duration Unit</em>}' enum.

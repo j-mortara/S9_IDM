@@ -25,12 +25,11 @@ import smartHome.SmartHomePackage;
  *   <li>{@link smartHome.impl.SensorImpl#getSensorType <em>Sensor Type</em>}</li>
  *   <li>{@link smartHome.impl.SensorImpl#getDataFile <em>Data File</em>}</li>
  *   <li>{@link smartHome.impl.SensorImpl#getName <em>Name</em>}</li>
- *   <li>{@link smartHome.impl.SensorImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SensorImpl extends MinimalEObjectImpl.Container implements Sensor {
+public abstract class SensorImpl extends MinimalEObjectImpl.Container implements Sensor {
 	/**
 	 * The cached value of the '{@link #getSensorType() <em>Sensor Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -79,26 +78,6 @@ public class SensorImpl extends MinimalEObjectImpl.Container implements Sensor {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int VALUE_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected int value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -207,27 +186,6 @@ public class SensorImpl extends MinimalEObjectImpl.Container implements Sensor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getValue() {
-		return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setValue(int newValue) {
-		int oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmartHomePackage.SENSOR__VALUE, oldValue, value));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -239,8 +197,6 @@ public class SensorImpl extends MinimalEObjectImpl.Container implements Sensor {
 			return getDataFile();
 		case SmartHomePackage.SENSOR__NAME:
 			return getName();
-		case SmartHomePackage.SENSOR__VALUE:
-			return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -261,9 +217,6 @@ public class SensorImpl extends MinimalEObjectImpl.Container implements Sensor {
 			return;
 		case SmartHomePackage.SENSOR__NAME:
 			setName((String) newValue);
-			return;
-		case SmartHomePackage.SENSOR__VALUE:
-			setValue((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -286,9 +239,6 @@ public class SensorImpl extends MinimalEObjectImpl.Container implements Sensor {
 		case SmartHomePackage.SENSOR__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case SmartHomePackage.SENSOR__VALUE:
-			setValue(VALUE_EDEFAULT);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -307,8 +257,6 @@ public class SensorImpl extends MinimalEObjectImpl.Container implements Sensor {
 			return DATA_FILE_EDEFAULT == null ? dataFile != null : !DATA_FILE_EDEFAULT.equals(dataFile);
 		case SmartHomePackage.SENSOR__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case SmartHomePackage.SENSOR__VALUE:
-			return value != VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -328,8 +276,6 @@ public class SensorImpl extends MinimalEObjectImpl.Container implements Sensor {
 		result.append(dataFile);
 		result.append(", name: ");
 		result.append(name);
-		result.append(", value: ");
-		result.append(value);
 		result.append(')');
 		return result.toString();
 	}

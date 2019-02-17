@@ -22,13 +22,22 @@ public interface SmartHomeFactory extends EFactory {
 	SmartHomeFactory eINSTANCE = smartHome.impl.SmartHomeFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Sensor</em>'.
+	 * Returns a new object of class '<em>Integer Sensor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Sensor</em>'.
+	 * @return a new object of class '<em>Integer Sensor</em>'.
 	 * @generated
 	 */
-	Sensor createSensor();
+	IntegerSensor createIntegerSensor();
+
+	/**
+	 * Returns a new object of class '<em>Boolean Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Boolean Sensor</em>'.
+	 * @generated
+	 */
+	BooleanSensor createBooleanSensor();
 
 	/**
 	 * Returns a new object of class '<em>Location</em>'.
@@ -49,6 +58,24 @@ public interface SmartHomeFactory extends EFactory {
 	SensorType createSensorType();
 
 	/**
+	 * Returns a new object of class '<em>Analog Sensor Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Analog Sensor Type</em>'.
+	 * @generated
+	 */
+	AnalogSensorType createAnalogSensorType();
+
+	/**
+	 * Returns a new object of class '<em>Boolean Sensor Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Boolean Sensor Type</em>'.
+	 * @generated
+	 */
+	BooleanSensorType createBooleanSensorType();
+
+	/**
 	 * Returns a new object of class '<em>Smart Home</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,13 +94,22 @@ public interface SmartHomeFactory extends EFactory {
 	Rule createRule();
 
 	/**
-	 * Returns a new object of class '<em>Condition</em>'.
+	 * Returns a new object of class '<em>Boolean Condition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Condition</em>'.
+	 * @return a new object of class '<em>Boolean Condition</em>'.
 	 * @generated
 	 */
-	Condition createCondition();
+	BooleanCondition createBooleanCondition();
+
+	/**
+	 * Returns a new object of class '<em>Integer Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Integer Condition</em>'.
+	 * @generated
+	 */
+	IntegerCondition createIntegerCondition();
 
 	/**
 	 * Returns a new object of class '<em>Duration</em>'.

@@ -15,13 +15,16 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import smartHome.Condition;
+import smartHome.AnalogSensorType;
+import smartHome.BooleanCondition;
+import smartHome.BooleanSensor;
+import smartHome.BooleanSensorType;
 import smartHome.Duration;
 import smartHome.Event;
+import smartHome.IntegerCondition;
+import smartHome.IntegerSensor;
 import smartHome.Location;
 import smartHome.Rule;
-import smartHome.Sensor;
-import smartHome.SensorType;
 import smartHome.SmartHome;
 import smartHome.SmartHomePackage;
 
@@ -39,8 +42,17 @@ public class SmartHomeDSLSemanticSequencer extends AbstractDelegatingSemanticSeq
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == SmartHomePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case SmartHomePackage.CONDITION:
-				sequence_Condition(context, (Condition) semanticObject); 
+			case SmartHomePackage.ANALOG_SENSOR_TYPE:
+				sequence_AnalogSensorType(context, (AnalogSensorType) semanticObject); 
+				return; 
+			case SmartHomePackage.BOOLEAN_CONDITION:
+				sequence_BooleanCondition(context, (BooleanCondition) semanticObject); 
+				return; 
+			case SmartHomePackage.BOOLEAN_SENSOR:
+				sequence_BooleanSensor(context, (BooleanSensor) semanticObject); 
+				return; 
+			case SmartHomePackage.BOOLEAN_SENSOR_TYPE:
+				sequence_BooleanSensorType(context, (BooleanSensorType) semanticObject); 
 				return; 
 			case SmartHomePackage.DURATION:
 				sequence_Duration(context, (Duration) semanticObject); 
@@ -48,17 +60,17 @@ public class SmartHomeDSLSemanticSequencer extends AbstractDelegatingSemanticSeq
 			case SmartHomePackage.EVENT:
 				sequence_Event(context, (Event) semanticObject); 
 				return; 
+			case SmartHomePackage.INTEGER_CONDITION:
+				sequence_IntegerCondition(context, (IntegerCondition) semanticObject); 
+				return; 
+			case SmartHomePackage.INTEGER_SENSOR:
+				sequence_IntegerSensor(context, (IntegerSensor) semanticObject); 
+				return; 
 			case SmartHomePackage.LOCATION:
 				sequence_Location(context, (Location) semanticObject); 
 				return; 
 			case SmartHomePackage.RULE:
 				sequence_Rule(context, (Rule) semanticObject); 
-				return; 
-			case SmartHomePackage.SENSOR:
-				sequence_Sensor(context, (Sensor) semanticObject); 
-				return; 
-			case SmartHomePackage.SENSOR_TYPE:
-				sequence_SensorType(context, (SensorType) semanticObject); 
 				return; 
 			case SmartHomePackage.SMART_HOME:
 				sequence_SmartHome(context, (SmartHome) semanticObject); 
@@ -70,24 +82,88 @@ public class SmartHomeDSLSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
-	 *     Condition returns Condition
+	 *     SensorType returns AnalogSensorType
+	 *     AnalogSensorType returns AnalogSensorType
 	 *
 	 * Constraint:
-	 *     (sensor=[Sensor|EString] operator=Operator operand=EInt)
+	 *     name=EString
 	 */
-	protected void sequence_Condition(ISerializationContext context, Condition semanticObject) {
+	protected void sequence_AnalogSensorType(ISerializationContext context, AnalogSensorType semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SmartHomePackage.Literals.CONDITION__SENSOR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartHomePackage.Literals.CONDITION__SENSOR));
-			if (transientValues.isValueTransient(semanticObject, SmartHomePackage.Literals.CONDITION__OPERATOR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartHomePackage.Literals.CONDITION__OPERATOR));
-			if (transientValues.isValueTransient(semanticObject, SmartHomePackage.Literals.CONDITION__OPERAND) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartHomePackage.Literals.CONDITION__OPERAND));
+			if (transientValues.isValueTransient(semanticObject, SmartHomePackage.Literals.SENSOR_TYPE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartHomePackage.Literals.SENSOR_TYPE__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getConditionAccess().getSensorSensorEStringParserRuleCall_0_0_1(), semanticObject.eGet(SmartHomePackage.Literals.CONDITION__SENSOR, false));
-		feeder.accept(grammarAccess.getConditionAccess().getOperatorOperatorEnumRuleCall_1_0(), semanticObject.getOperator());
-		feeder.accept(grammarAccess.getConditionAccess().getOperandEIntParserRuleCall_2_0(), semanticObject.getOperand());
+		feeder.accept(grammarAccess.getAnalogSensorTypeAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Condition returns BooleanCondition
+	 *     BooleanCondition returns BooleanCondition
+	 *
+	 * Constraint:
+	 *     (sensor=[BooleanSensor|EString] operator=BooleanOperator operand=EBoolean)
+	 */
+	protected void sequence_BooleanCondition(ISerializationContext context, BooleanCondition semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartHomePackage.Literals.BOOLEAN_CONDITION__SENSOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartHomePackage.Literals.BOOLEAN_CONDITION__SENSOR));
+			if (transientValues.isValueTransient(semanticObject, SmartHomePackage.Literals.BOOLEAN_CONDITION__OPERATOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartHomePackage.Literals.BOOLEAN_CONDITION__OPERATOR));
+			if (transientValues.isValueTransient(semanticObject, SmartHomePackage.Literals.BOOLEAN_CONDITION__OPERAND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartHomePackage.Literals.BOOLEAN_CONDITION__OPERAND));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBooleanConditionAccess().getSensorBooleanSensorEStringParserRuleCall_0_0_1(), semanticObject.eGet(SmartHomePackage.Literals.BOOLEAN_CONDITION__SENSOR, false));
+		feeder.accept(grammarAccess.getBooleanConditionAccess().getOperatorBooleanOperatorEnumRuleCall_1_0(), semanticObject.getOperator());
+		feeder.accept(grammarAccess.getBooleanConditionAccess().getOperandEBooleanParserRuleCall_2_0(), semanticObject.isOperand());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     SensorType returns BooleanSensorType
+	 *     BooleanSensorType returns BooleanSensorType
+	 *
+	 * Constraint:
+	 *     name=EString
+	 */
+	protected void sequence_BooleanSensorType(ISerializationContext context, BooleanSensorType semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartHomePackage.Literals.SENSOR_TYPE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartHomePackage.Literals.SENSOR_TYPE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBooleanSensorTypeAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Sensor returns BooleanSensor
+	 *     BooleanSensor returns BooleanSensor
+	 *
+	 * Constraint:
+	 *     (name=EString sensorType=[BooleanSensorType|EString] dataFile=EString)
+	 */
+	protected void sequence_BooleanSensor(ISerializationContext context, BooleanSensor semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartHomePackage.Literals.SENSOR__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartHomePackage.Literals.SENSOR__NAME));
+			if (transientValues.isValueTransient(semanticObject, SmartHomePackage.Literals.SENSOR__SENSOR_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartHomePackage.Literals.SENSOR__SENSOR_TYPE));
+			if (transientValues.isValueTransient(semanticObject, SmartHomePackage.Literals.SENSOR__DATA_FILE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartHomePackage.Literals.SENSOR__DATA_FILE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBooleanSensorAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getBooleanSensorAccess().getSensorTypeBooleanSensorTypeEStringParserRuleCall_2_0_1(), semanticObject.eGet(SmartHomePackage.Literals.SENSOR__SENSOR_TYPE, false));
+		feeder.accept(grammarAccess.getBooleanSensorAccess().getDataFileEStringParserRuleCall_4_0(), semanticObject.getDataFile());
 		feeder.finish();
 	}
 	
@@ -133,6 +209,56 @@ public class SmartHomeDSLSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
+	 *     Condition returns IntegerCondition
+	 *     IntegerCondition returns IntegerCondition
+	 *
+	 * Constraint:
+	 *     (sensor=[IntegerSensor|EString] operator=IntegerOperator operand=EInt)
+	 */
+	protected void sequence_IntegerCondition(ISerializationContext context, IntegerCondition semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartHomePackage.Literals.INTEGER_CONDITION__SENSOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartHomePackage.Literals.INTEGER_CONDITION__SENSOR));
+			if (transientValues.isValueTransient(semanticObject, SmartHomePackage.Literals.INTEGER_CONDITION__OPERATOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartHomePackage.Literals.INTEGER_CONDITION__OPERATOR));
+			if (transientValues.isValueTransient(semanticObject, SmartHomePackage.Literals.INTEGER_CONDITION__OPERAND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartHomePackage.Literals.INTEGER_CONDITION__OPERAND));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getIntegerConditionAccess().getSensorIntegerSensorEStringParserRuleCall_0_0_1(), semanticObject.eGet(SmartHomePackage.Literals.INTEGER_CONDITION__SENSOR, false));
+		feeder.accept(grammarAccess.getIntegerConditionAccess().getOperatorIntegerOperatorEnumRuleCall_1_0(), semanticObject.getOperator());
+		feeder.accept(grammarAccess.getIntegerConditionAccess().getOperandEIntParserRuleCall_2_0(), semanticObject.getOperand());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Sensor returns IntegerSensor
+	 *     IntegerSensor returns IntegerSensor
+	 *
+	 * Constraint:
+	 *     (name=EString sensorType=[AnalogSensorType|EString] dataFile=EString)
+	 */
+	protected void sequence_IntegerSensor(ISerializationContext context, IntegerSensor semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartHomePackage.Literals.SENSOR__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartHomePackage.Literals.SENSOR__NAME));
+			if (transientValues.isValueTransient(semanticObject, SmartHomePackage.Literals.SENSOR__SENSOR_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartHomePackage.Literals.SENSOR__SENSOR_TYPE));
+			if (transientValues.isValueTransient(semanticObject, SmartHomePackage.Literals.SENSOR__DATA_FILE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartHomePackage.Literals.SENSOR__DATA_FILE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getIntegerSensorAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getIntegerSensorAccess().getSensorTypeAnalogSensorTypeEStringParserRuleCall_2_0_1(), semanticObject.eGet(SmartHomePackage.Literals.SENSOR__SENSOR_TYPE, false));
+		feeder.accept(grammarAccess.getIntegerSensorAccess().getDataFileEStringParserRuleCall_4_0(), semanticObject.getDataFile());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Location returns Location
 	 *
 	 * Constraint:
@@ -152,42 +278,6 @@ public class SmartHomeDSLSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 */
 	protected void sequence_Rule(ISerializationContext context, Rule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     SensorType returns SensorType
-	 *
-	 * Constraint:
-	 *     name=EString?
-	 */
-	protected void sequence_SensorType(ISerializationContext context, SensorType semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Sensor returns Sensor
-	 *
-	 * Constraint:
-	 *     (name=EString sensorType=[SensorType|EString] dataFile=EString)
-	 */
-	protected void sequence_Sensor(ISerializationContext context, Sensor semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SmartHomePackage.Literals.SENSOR__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartHomePackage.Literals.SENSOR__NAME));
-			if (transientValues.isValueTransient(semanticObject, SmartHomePackage.Literals.SENSOR__SENSOR_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartHomePackage.Literals.SENSOR__SENSOR_TYPE));
-			if (transientValues.isValueTransient(semanticObject, SmartHomePackage.Literals.SENSOR__DATA_FILE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartHomePackage.Literals.SENSOR__DATA_FILE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSensorAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getSensorAccess().getSensorTypeSensorTypeEStringParserRuleCall_2_0_1(), semanticObject.eGet(SmartHomePackage.Literals.SENSOR__SENSOR_TYPE, false));
-		feeder.accept(grammarAccess.getSensorAccess().getDataFileEStringParserRuleCall_4_0(), semanticObject.getDataFile());
-		feeder.finish();
 	}
 	
 	

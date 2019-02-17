@@ -73,26 +73,49 @@ public class SmartHomeItemProviderAdapterFactory extends SmartHomeAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link smartHome.Sensor} instances.
+	 * This keeps track of the one adapter used for all {@link smartHome.IntegerSensor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SensorItemProvider sensorItemProvider;
+	protected IntegerSensorItemProvider integerSensorItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link smartHome.Sensor}.
+	 * This creates an adapter for a {@link smartHome.IntegerSensor}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSensorAdapter() {
-		if (sensorItemProvider == null) {
-			sensorItemProvider = new SensorItemProvider(this);
+	public Adapter createIntegerSensorAdapter() {
+		if (integerSensorItemProvider == null) {
+			integerSensorItemProvider = new IntegerSensorItemProvider(this);
 		}
 
-		return sensorItemProvider;
+		return integerSensorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link smartHome.BooleanSensor} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BooleanSensorItemProvider booleanSensorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link smartHome.BooleanSensor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBooleanSensorAdapter() {
+		if (booleanSensorItemProvider == null) {
+			booleanSensorItemProvider = new BooleanSensorItemProvider(this);
+		}
+
+		return booleanSensorItemProvider;
 	}
 
 	/**
@@ -142,6 +165,52 @@ public class SmartHomeItemProviderAdapterFactory extends SmartHomeAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link smartHome.AnalogSensorType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AnalogSensorTypeItemProvider analogSensorTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link smartHome.AnalogSensorType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAnalogSensorTypeAdapter() {
+		if (analogSensorTypeItemProvider == null) {
+			analogSensorTypeItemProvider = new AnalogSensorTypeItemProvider(this);
+		}
+
+		return analogSensorTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link smartHome.BooleanSensorType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BooleanSensorTypeItemProvider booleanSensorTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link smartHome.BooleanSensorType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBooleanSensorTypeAdapter() {
+		if (booleanSensorTypeItemProvider == null) {
+			booleanSensorTypeItemProvider = new BooleanSensorTypeItemProvider(this);
+		}
+
+		return booleanSensorTypeItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link smartHome.SmartHome} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -188,26 +257,49 @@ public class SmartHomeItemProviderAdapterFactory extends SmartHomeAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link smartHome.Condition} instances.
+	 * This keeps track of the one adapter used for all {@link smartHome.BooleanCondition} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConditionItemProvider conditionItemProvider;
+	protected BooleanConditionItemProvider booleanConditionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link smartHome.Condition}.
+	 * This creates an adapter for a {@link smartHome.BooleanCondition}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createConditionAdapter() {
-		if (conditionItemProvider == null) {
-			conditionItemProvider = new ConditionItemProvider(this);
+	public Adapter createBooleanConditionAdapter() {
+		if (booleanConditionItemProvider == null) {
+			booleanConditionItemProvider = new BooleanConditionItemProvider(this);
 		}
 
-		return conditionItemProvider;
+		return booleanConditionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link smartHome.IntegerCondition} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IntegerConditionItemProvider integerConditionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link smartHome.IntegerCondition}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIntegerConditionAdapter() {
+		if (integerConditionItemProvider == null) {
+			integerConditionItemProvider = new IntegerConditionItemProvider(this);
+		}
+
+		return integerConditionItemProvider;
 	}
 
 	/**
@@ -378,18 +470,26 @@ public class SmartHomeItemProviderAdapterFactory extends SmartHomeAdapterFactory
 	 * @generated
 	 */
 	public void dispose() {
-		if (sensorItemProvider != null)
-			sensorItemProvider.dispose();
+		if (integerSensorItemProvider != null)
+			integerSensorItemProvider.dispose();
+		if (booleanSensorItemProvider != null)
+			booleanSensorItemProvider.dispose();
 		if (locationItemProvider != null)
 			locationItemProvider.dispose();
 		if (sensorTypeItemProvider != null)
 			sensorTypeItemProvider.dispose();
+		if (analogSensorTypeItemProvider != null)
+			analogSensorTypeItemProvider.dispose();
+		if (booleanSensorTypeItemProvider != null)
+			booleanSensorTypeItemProvider.dispose();
 		if (smartHomeItemProvider != null)
 			smartHomeItemProvider.dispose();
 		if (ruleItemProvider != null)
 			ruleItemProvider.dispose();
-		if (conditionItemProvider != null)
-			conditionItemProvider.dispose();
+		if (booleanConditionItemProvider != null)
+			booleanConditionItemProvider.dispose();
+		if (integerConditionItemProvider != null)
+			integerConditionItemProvider.dispose();
 		if (durationItemProvider != null)
 			durationItemProvider.dispose();
 		if (eventItemProvider != null)

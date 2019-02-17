@@ -1,17 +1,15 @@
 SmartHome{
 	sensorTypes{
-		TEMPERATURE, HUMIDITY
+		analog TEMPERATURE, analog HUMIDITY, boolean PRESENCE
 	}
 	Location bedroom {
-		Sensor temp1 TEMPERATURE ("/home/ardenia/projects/polytech/modeles/smart_home/custom_dataset/sensor1.csv")
+		IntegerSensor temp1 TEMPERATURE (""),
+		BooleanSensor pres1 PRESENCE ("")
 	},
 	Location kitchen {
-		Sensor hum1 HUMIDITY ("/home/ardenia/projects/polytech/modeles/smart_home/custom_dataset/sensor2.csv")
+		IntegerSensor hum1 HUMIDITY ("")
 	}
 	rules{
-		if "bedroom.temp1" < 20 for 20 min then "too cold",
-		if "kitchen.hum1" > 12 for 10 min then "too damp",
-		if "bedroom.temp1" < 20 and "kitchen.hum1" > 12 for 10 min then "NOT OK AT ALL"
+		if "bedroom.temp1" < 10 and "bedroom.pres1" is true for 5 min then "Johann est mort de froid dans son sommeil"
 	}
-	
 }

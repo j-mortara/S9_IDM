@@ -160,6 +160,12 @@ public class SmartHomeItemProvider extends ItemProviderAdapter implements IEditi
 		newChildDescriptors.add(createChildParameter(SmartHomePackage.Literals.SMART_HOME__SENSOR_TYPES,
 				SmartHomeFactory.eINSTANCE.createSensorType()));
 
+		newChildDescriptors.add(createChildParameter(SmartHomePackage.Literals.SMART_HOME__SENSOR_TYPES,
+				SmartHomeFactory.eINSTANCE.createAnalogSensorType()));
+
+		newChildDescriptors.add(createChildParameter(SmartHomePackage.Literals.SMART_HOME__SENSOR_TYPES,
+				SmartHomeFactory.eINSTANCE.createBooleanSensorType()));
+
 		newChildDescriptors.add(createChildParameter(SmartHomePackage.Literals.SMART_HOME__RULES,
 				SmartHomeFactory.eINSTANCE.createRule()));
 	}
