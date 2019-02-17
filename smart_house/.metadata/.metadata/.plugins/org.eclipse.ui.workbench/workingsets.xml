@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1547474125746_0" label="Java Main Sources" name="main">
+<item elementID="=SmartHome/src" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.unice.polytech.idm.smarthomedsl/src" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.unice.polytech.idm.smarthomedsl/src-gen" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.unice.polytech.idm.smarthomedsl/xtend-gen" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.unice.polytech.idm.smarthomedsl.ide/src" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.unice.polytech.idm.smarthomedsl.ide/src-gen" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.unice.polytech.idm.smarthomedsl.ide/xtend-gen" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.unice.polytech.idm.smarthomedsl.tests/src" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.unice.polytech.idm.smarthomedsl.tests/src-gen" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.unice.polytech.idm.smarthomedsl.tests/xtend-gen" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.unice.polytech.idm.smarthomedsl.ui/src" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.unice.polytech.idm.smarthomedsl.ui/src-gen" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.unice.polytech.idm.smarthomedsl.ui/xtend-gen" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.unice.polytech.idm.smarthomedsl.ui.tests/src" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.unice.polytech.idm.smarthomedsl.ui.tests/src-gen" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.unice.polytech.idm.smarthomedsl.ui.tests/xtend-gen" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1547474125763_1" label="Java Test Sources" name="test"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1547474130560_2" label="Window Working Set" name="Aggregate for window 1547474130560"/>
+</workingSetManager>
