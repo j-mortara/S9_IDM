@@ -88,11 +88,16 @@ public class SmartHomeAspect {
         }
         EList<Rule> _rules = _self.getRules();
         for (final Rule rule : _rules) {
-          RuleAspect.evaluateRule(rule);
+          String _description = rule.getEvent().getDescription();
+          String _plus_2 = ("Rule " + _description);
+          String _plus_3 = (_plus_2 + " value : ");
+          boolean _evaluateRule = RuleAspect.evaluateRule(rule);
+          String _plus_4 = (_plus_3 + Boolean.valueOf(_evaluateRule));
+          InputOutput.<String>println(_plus_4);
         }
         int _time_1 = SmartHomeAspect.time(_self);
-        int _plus_2 = (_time_1 + 1);
-        SmartHomeAspect.time(_self, _plus_2);
+        int _plus_5 = (_time_1 + 1);
+        SmartHomeAspect.time(_self, _plus_5);
       }
     }
   }

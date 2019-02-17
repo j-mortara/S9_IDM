@@ -13,14 +13,15 @@ import smartHome.Rule;
 @SuppressWarnings("all")
 public class RuleAspect {
   @Step
-  public static void evaluateRule(final Rule _self) {
+  public static boolean evaluateRule(final Rule _self) {
     final fr.unice.polytech.idm.smartHome.aspects.RuleAspectRuleAspectProperties _self_ = fr.unice.polytech.idm.smartHome.aspects.RuleAspectRuleAspectContext.getSelf(_self);
-    // #DispatchPointCut_before# void evaluateRule()
+    Object result = null;
+    // #DispatchPointCut_before# boolean evaluateRule()
     if (_self instanceof smartHome.Rule){
     	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
     		@Override
     		public void execute() {
-    			fr.unice.polytech.idm.smartHome.aspects.RuleAspect._privk3_evaluateRule(_self_, (smartHome.Rule)_self);
+    			addToResult(fr.unice.polytech.idm.smartHome.aspects.RuleAspect._privk3_evaluateRule(_self_, (smartHome.Rule)_self));
     		}
     	};
     	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
@@ -29,8 +30,10 @@ public class RuleAspect {
     	} else {
     		command.execute();
     	}
+    	result = command.getResult();
     	;
     };
+    return (boolean)result;
   }
   
   @Step
@@ -72,7 +75,7 @@ public class RuleAspect {
     };
   }
   
-  protected static void _privk3_evaluateRule(final RuleAspectRuleAspectProperties _self_, final Rule _self) {
+  protected static boolean _privk3_evaluateRule(final RuleAspectRuleAspectProperties _self_, final Rule _self) {
     final Predicate<Condition> _function = (Condition it) -> {
       boolean _evaluate = ConditionAspect.evaluate(it);
       return (_evaluate == true);
@@ -89,8 +92,9 @@ public class RuleAspect {
     int _value = _self.getDuration().getValue();
     boolean _greaterEqualsThan = (_timeTrue_1 >= _value);
     if (_greaterEqualsThan) {
-      RuleAspect.triggerEvent(_self);
+      return true;
     }
+    return false;
   }
   
   protected static void _privk3_triggerEvent(final RuleAspectRuleAspectProperties _self_, final Rule _self) {
