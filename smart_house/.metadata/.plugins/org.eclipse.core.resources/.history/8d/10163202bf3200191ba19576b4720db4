@@ -1,9 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	smartHome.SmartHome = fr.unice.polytech.idm.smartHome.aspects.SmartHomeAspect
-	smartHome.Condition = fr.unice.polytech.idm.smartHome.aspects.ConditionAspect
-	smartHome.BooleanCondition = fr.unice.polytech.idm.smartHome.aspects.BooleanConditionAspect
-	smartHome.Rule = fr.unice.polytech.idm.smartHome.aspects.RuleAspect
-	smartHome.SensorType = fr.unice.polytech.idm.smartHome.aspects.SensorTypeAspect
-	smartHome.Sensor = fr.unice.polytech.idm.smartHome.aspects.SensorAspect
-	smartHome.Location = fr.unice.polytech.idm.smartHome.aspects.LocationAspect
-	smartHome.IntegerCondition = fr.unice.polytech.idm.smartHome.aspects.IntegerConditionAspect
