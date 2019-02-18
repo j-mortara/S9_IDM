@@ -3,6 +3,7 @@
   <viewpoint:DAnalysis xmi:id="_Uxbi8BgGEemo3vXhGwDnAg" selectedViews="_Vrae8BgGEemo3vXhGwDnAg" version="13.0.0.201804031646">
     <semanticResources>smartHome.ecore</semanticResources>
     <semanticResources>smartHome.genmodel</semanticResources>
+    <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_Vrae8BgGEemo3vXhGwDnAg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_V1EKMBgGEemo3vXhGwDnAg" name="smartHome" repPath="#_VtwoUBgGEemo3vXhGwDnAg">
