@@ -66,6 +66,5 @@
     <genClasses ecoreClass="smartHome.ecore#//Event">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smartHome.ecore#//Event/description"/>
     </genClasses>
-    <genClasses ecoreClass="smartHome.ecore#//SensorValue"/>
   </genPackages>
 </genmodel:GenModel>

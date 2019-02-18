@@ -54,9 +54,30 @@ boolean PRESENCE
 
 Il est possible de déclarer des règles, qui peuvent évaluer plusieurs conditions. Textuellement, ceci pourrait être :
 
-```
-Si le capteur de température de la chambre m'indique qu'il fait moins de 10°C et qu'il y a quelqu'un à l'intérieur, et que cette situation dure depuis au moins 10 minutes, alors cette personne a froid.
-```
+_Si le capteur de température de la chambre m'indique qu'il fait moins de 10°C et qu'il y a quelqu'un à l'intérieur, et que cette situation dure depuis au moins 10 minutes, alors cette personne a froid._
 
 #### Modèle
 
+![model_diagram](smartHome.png)
+
+La `SmartHome` possède :
+- une liste de `Location` : les pièces de la maison, qui contiennent chacune plusieurs `Sensor`
+- une liste de `Rule` : les règles définies par l'utilisateur, qui contiennent chacun plusieurs `Condition`, ainsi que l'`Event` déclenché dès que la règle devient vraie
+- une liste de `SensorType` : les types de capteurs définis par l'utilisateur
+
+`SensorType` est hérité par deux classes, correspondant aux deux types de sensors :
+- `AnalogSensorType`
+- `BooleanSensorType`
+
+Ces deux types sont utilisés respectivement dans deux sous-classes de `Sensor` :
+- `IntegerSensor`
+- `BooleanSensor`
+
+Chaque `Condition` représente une comparaison entre la valeur d'un capteur et une valeur décidée par l'utilisateur dans la définition d'une règle.
+Une `Condition` permet de comparer des entiers ou des booléens.
+```
+"kitchen.temperature" < 10
+"bedroom.presence" is true
+```
+Ceci est rendu possible grâce à l'héritage (`IntegerCondition` et `BooleanCondition`).
+Ces deux sous-classes contiennent respectivement un `IntegerOperator` et un `BooleanOperator`.
