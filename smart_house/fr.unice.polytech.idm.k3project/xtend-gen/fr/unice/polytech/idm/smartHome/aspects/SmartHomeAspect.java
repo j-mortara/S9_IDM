@@ -89,8 +89,8 @@ public class SmartHomeAspect {
         EList<Rule> _rules = _self.getRules();
         for (final Rule rule : _rules) {
           String _description = rule.getEvent().getDescription();
-          String _plus_2 = ("Rule " + _description);
-          String _plus_3 = (_plus_2 + " value : ");
+          String _plus_2 = ("Rule \"" + _description);
+          String _plus_3 = (_plus_2 + "\" value : ");
           boolean _evaluateRule = RuleAspect.evaluateRule(rule);
           String _plus_4 = (_plus_3 + Boolean.valueOf(_evaluateRule));
           InputOutput.<String>println(_plus_4);

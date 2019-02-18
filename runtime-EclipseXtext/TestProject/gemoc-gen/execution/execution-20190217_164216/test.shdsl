@@ -1,0 +1,15 @@
+SmartHome{
+	sensorTypes{
+		analog TEMPERATURE, analog HUMIDITY, boolean PRESENCE
+	}
+	Location bedroom {
+		IntegerSensor temp1 TEMPERATURE (""),
+		BooleanSensor pres1 PRESENCE ("")
+	},
+	Location kitchen {
+		IntegerSensor hum1 HUMIDITY ("")
+	}
+	rules{
+		if "bedroom.temp1" < 10 and "bedroom.pres1" is true for 5 min then "Johann est mort de froid dans son sommeil"
+	}
+}

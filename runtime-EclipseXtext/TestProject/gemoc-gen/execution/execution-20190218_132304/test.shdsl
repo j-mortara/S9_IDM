@@ -10,8 +10,7 @@ SmartHome{
 		IntegerSensor hum1 HUMIDITY ("/home/ardenia/projects/polytech/modeles/smart_home/custom_dataset/sensor2.csv")
 	}
 	rules{
-		if "bedroom.temp1" < 10 and "bedroom.pres1" is true for 2 min then "Johann est en hypothermie",
-		if "bedroom.temp1" < 10 and "bedroom.pres1" is true for 5 min then "Johann est mort de froid dans son sommeil",
-		if "kitchen.hum1" > 12 for 10 min then "Too damp"
+		if "bedroom.temp1" < 10 and "bedroom.pres1" is true for 2 min then "Johann est en hypothermie"
+		if "bedroom.temp1" < 10 and "bedroom.pres1" is true for 5 min then "Johann est mort de froid dans son sommeil"
 	}
 }

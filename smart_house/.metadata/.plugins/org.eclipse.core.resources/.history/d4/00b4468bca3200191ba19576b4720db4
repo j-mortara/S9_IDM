@@ -177,7 +177,7 @@ class SmartHomeAspect {
 				}				
 			}
 			for(Rule rule : _self.rules){
-				println("Rule \""+ rule.event.description + "\" value : " + rule.evaluateRule());
+				println("Rule "+ rule.event.description + " value : " + rule.evaluateRule());
 			}
 			_self.time = _self.time + 1;			
 		}
